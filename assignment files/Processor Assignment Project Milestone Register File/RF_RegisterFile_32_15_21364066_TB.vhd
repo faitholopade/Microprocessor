@@ -97,22 +97,33 @@ stim_proc: process
 
 begin 
 
-RW_TB    <= '1';
-TD_TB    <= "0000";
-TA_TB    <= "0000";
-TB_TB    <= "0000";
+-- RW_TB    <= '1';
+-- TD_TB    <= "0000";
+-- TA_TB    <= "0000";
+-- TB_TB    <= "0000";
 --SA_TB <= "00000" after period/4;
 --SB_TB <= "00000" after period/4;
 
--- REGISTERS --
+-- GENERAL PURPOSE REGISTERS --
 
---0
+--0 (showing write to register)
 wait until Clock_TB'event and Clock_TB = '1';
 RW_TB    <= '1' after period/4;
 D_TB  <= "00000001010001011111110101100010" after period/4;
 DR_TB <= "00000" after period/4;
+TD_TB    <= "0000";
+-- SA_TB <= "00000" after period/4;
+-- SB_TB <= "00000" after period/4;
+
+--0 (showing read from register)
+-- wait until Clock_TB'event and Clock_TB = '1';
+RW_TB    <= '1' after period/4;
+-- D_TB  <= "00000001010001011111110101100010" after period/4;
+DR_TB <= "00000" after period/4;
 SA_TB <= "00000" after period/4;
 SB_TB <= "00000" after period/4;
+TA_TB    <= "0000";
+TB_TB    <= "0000";
 
 --1
 wait until Clock_TB'event and Clock_TB = '1';
