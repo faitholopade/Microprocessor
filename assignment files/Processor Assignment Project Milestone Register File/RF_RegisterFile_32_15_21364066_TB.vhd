@@ -71,7 +71,7 @@ signal TA_TB : std_logic_vector(3 downto 0) := (others => '0');
 signal A_TB : std_logic_vector(31 downto 0) := (others => '0');
 signal B_TB : std_logic_vector(31 downto 0) := (others => '0');
 
-    constant period : time := 10ns;
+    constant period : time := 60ns;
 
 
 begin
@@ -91,491 +91,686 @@ begin
     B => B_TB
 );
 
-Clock_TB <= not Clock_TB after period/4;
+Clock_TB <= not Clock_TB after period/2;
 
 stim_proc: process
 
 begin 
 
--- RW_TB    <= '1';
--- TD_TB    <= "0000";
--- TA_TB    <= "0000";
--- TB_TB    <= "0000";
---SA_TB <= "00000" after period/4;
---SB_TB <= "00000" after period/4;
+-- WRITING TO GENERAL PURPOSE REGISTERS --
 
--- GENERAL PURPOSE REGISTERS --
+    --0 (showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100010" after period/2;
+    DR_TB <= "00000" after period/2;
+    TD_TB    <= "0000";
 
---0 (showing write to register)
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100010" after period/4;
-DR_TB <= "00000" after period/4;
-TD_TB    <= "0000";
--- SA_TB <= "00000" after period/4;
--- SB_TB <= "00000" after period/4;
+    --1(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100011" after period/2;
+    DR_TB <= "00001" after period/2;
+    TD_TB    <= "0000";
 
---0 (showing read from register)
--- wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
--- D_TB  <= "00000001010001011111110101100010" after period/4;
-DR_TB <= "00000" after period/4;
-SA_TB <= "00000" after period/4;
-SB_TB <= "00000" after period/4;
-TA_TB    <= "0000";
-TB_TB    <= "0000";
+    --2(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100100" after period/2;
+    DR_TB <= "00010" after period/2;
+    TD_TB    <= "0000";
 
---1
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100011" after period/4;
-DR_TB <= "00001" after period/4;
-SA_TB <= "00000" after period/4;
-SB_TB <= "00000" after period/4;
- 
---2
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100100" after period/4;
-DR_TB <= "00010" after period/4;
-SA_TB <= "00000" after period/4;
-SB_TB <= "00000" after period/4;
- 
---3
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100101" after period/4;
-DR_TB <= "00011" after period/4;
-SA_TB <= "00001" after period/4;
-SB_TB <= "00001" after period/4;
- 
---4
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100110" after period/4;
-DR_TB <= "00100" after period/4;
-SA_TB <= "00010" after period/4;
-SB_TB <= "00010" after period/4;
- 
---5
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100111" after period/4;
-DR_TB <= "00101" after period/4;
-SA_TB <= "00011" after period/4;
-SB_TB <= "00011" after period/4;
- 
---6
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101000" after period/4;
-DR_TB <= "00110" after period/4;
-SA_TB <= "00100" after period/4;
-SB_TB <= "00100" after period/4;
- 
---7
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101001" after period/4;
-DR_TB <= "00111" after period/4;
-SA_TB <= "00101" after period/4;
-SB_TB <= "00101" after period/4;
- 
---8
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101010" after period/4;
-DR_TB <= "01000" after period/4;
-SA_TB <= "00110" after period/4;
-SB_TB <= "00110" after period/4;
- 
---9
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101011" after period/4;
-DR_TB <= "01001" after period/4;
-SA_TB <= "00111" after period/4;
-SB_TB <= "00111" after period/4;
- 
---10
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101100" after period/4;
-DR_TB <= "01010" after period/4;
-SA_TB <= "01000" after period/4;
-SB_TB <= "01000" after period/4;
- 
---11
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101101" after period/4;
-DR_TB <= "01011" after period/4;
-SA_TB <= "01001" after period/4;
-SB_TB <= "01001" after period/4;
- 
---12
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101110" after period/4;
-DR_TB <= "01100" after period/4;
-SA_TB <= "01010" after period/4;
-SB_TB <= "01010" after period/4;
- 
---13
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101111" after period/4;
-DR_TB <= "01101" after period/4;
-SA_TB <= "01011" after period/4;
-SB_TB <= "01011" after period/4;
- 
---14
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110000" after period/4;
-DR_TB <= "01110" after period/4;
-SA_TB <= "01100" after period/4;
-SB_TB <= "01100" after period/4;
- 
---15
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110001" after period/4;
-DR_TB <= "01111" after period/4;
-SA_TB <= "01101" after period/4;
-SB_TB <= "01101" after period/4;
- 
---16
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110010" after period/4;
-DR_TB <= "10000" after period/4;
-SA_TB <= "01110" after period/4;
-SB_TB <= "01110" after period/4;
- 
---17
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110011" after period/4;
-DR_TB <= "10001" after period/4;
-SA_TB <= "01111" after period/4;
-SB_TB <= "01111" after period/4;
- 
---18
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110100" after period/4;
-DR_TB <= "10010" after period/4;
-SA_TB <= "10000" after period/4;
-SB_TB <= "10000" after period/4;
- 
---19
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110101" after period/4;
-DR_TB <= "10011" after period/4;
-SA_TB <= "10001" after period/4;
-SB_TB <= "10001" after period/4;
- 
---20
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110110" after period/4;
-DR_TB <= "10100" after period/4;
-SA_TB <= "10010" after period/4;
-SB_TB <= "10010" after period/4;
- 
---21
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110111" after period/4;
-DR_TB <= "10101" after period/4;
-SA_TB <= "10011" after period/4;
-SB_TB <= "10011" after period/4;
- 
---22
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111000" after period/4;
-DR_TB <= "10110" after period/4;
-SA_TB <= "10100" after period/4;
-SB_TB <= "10100" after period/4;
- 
---23
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111001" after period/4;
-DR_TB <= "10111" after period/4;
-SA_TB <= "10101" after period/4;
-SB_TB <= "10101" after period/4;
- 
---24
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111010" after period/4;
-DR_TB <= "11000" after period/4;
-SA_TB <= "10110" after period/4;
-SB_TB <= "10110" after period/4;
- 
---25
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111011" after period/4;
-DR_TB <= "11001" after period/4;
-SA_TB <= "10111" after period/4;
-SB_TB <= "10111" after period/4;
- 
---26
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111100" after period/4;
-DR_TB <= "11010" after period/4;
-SA_TB <= "11000" after period/4;
-SB_TB <= "11000" after period/4;
- 
---27
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111101" after period/4;
-DR_TB <= "11011" after period/4;
-SA_TB <= "11001" after period/4;
-SB_TB <= "11001" after period/4;
- 
---28
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111110" after period/4;
-DR_TB <= "11100" after period/4;
-SA_TB <= "11010" after period/4;
-SB_TB <= "11010" after period/4;
- 
---29
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101111111" after period/4;
-DR_TB <= "11101" after period/4;
-SA_TB <= "11011" after period/4;
-SB_TB <= "11011" after period/4;
- 
---30
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110110000000" after period/4;
-DR_TB <= "11110" after period/4;
-SA_TB <= "11100" after period/4;
-SB_TB <= "11100" after period/4;
- 
---31
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110110000001" after period/4;
-DR_TB <= "11111" after period/4;
-SA_TB <= "11101" after period/4;
-SB_TB <= "11101" after period/4;
+    --3(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100101" after period/2;
+    DR_TB <= "00011" after period/2;
+    TD_TB    <= "0000";
 
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110110000010" after period/4;
-DR_TB <= "00000" after period/4;
-SA_TB <= "11110" after period/4;
-SB_TB <= "11110" after period/4;
+    --4(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100110" after period/2;
+    DR_TB <= "00100" after period/2;
+    TD_TB    <= "0000";
 
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100010" after period/4;
-DR_TB <= "00001" after period/4;
-SA_TB <= "11111" after period/4;
-SB_TB <= "11111" after period/4;
+    --5(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100111" after period/2;
+    DR_TB <= "00101" after period/2;
+    TD_TB    <= "0000";
 
---TEMP REGISTERS --
- 
---0
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100011" after period/4;
-TA_TB    <= "0000" after period/4;
-TB_TB    <= "0000" after period/4;
-TD_TB     <= "0001" after period/4;
-DR_TB <= "00000" after period/4;
-SA_TB <= "00000" after period/4;
-SB_TB <= "00000" after period/4;
- 
---1
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100100" after period/4;
-TA_TB    <= "0001" after period/4;
-TB_TB     <= "0001" after period/4;
-TD_TB     <= "0010" after period/4;
-DR_TB <= "00001" after period/4;
-SA_TB <= "00000" after period/4;
-SB_TB <= "00000" after period/4;
- 
---2
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100101" after period/4;
-TA_TB    <= "0010" after period/4;
-TB_TB     <= "0010" after period/4;
-TD_TB     <= "0011" after period/4;
-DR_TB <= "00010" after period/4;
-SA_TB <= "00001" after period/4;
-SB_TB <= "00001" after period/4;
- 
---3
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100110" after period/4;
-TA_TB    <= "0011" after period/4;
-TB_TB     <= "0011" after period/4;
-TD_TB     <= "0100" after period/4;
-DR_TB <= "00011" after period/4;
-SA_TB <= "00010" after period/4;
-SB_TB <= "00010" after period/4;
- 
---4
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100111" after period/4;
-TA_TB    <= "0100" after period/4;
-TB_TB     <= "0100" after period/4;
-TD_TB     <= "0101" after period/4;
-DR_TB <= "00100" after period/4;
-SA_TB <= "00011" after period/4;
-SB_TB <= "00011" after period/4;
- 
---5
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101000" after period/4;
-TA_TB    <= "0101" after period/4;
-TB_TB     <= "0101" after period/4;
-TD_TB     <= "0110" after period/4;
-DR_TB <= "00101" after period/4;
-SA_TB <= "00100" after period/4;
-SB_TB <= "00100" after period/4;
- 
---6
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101001" after period/4;
-TA_TB    <= "0110" after period/4;
-TB_TB     <= "0110" after period/4;
-TD_TB     <= "0111" after period/4;
-DR_TB <= "00110" after period/4;
-SA_TB <= "00101" after period/4;
-SB_TB <= "00101" after period/4;
- 
---7
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101010" after period/4;
-TA_TB    <= "0111" after period/4;
-TB_TB     <= "0111" after period/4;
-TD_TB     <= "1000" after period/4;
-DR_TB <= "00111" after period/4;
-SA_TB <= "00110" after period/4;
-SB_TB <= "00110" after period/4;
- 
---8
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101011" after period/4;
-TA_TB    <= "1000" after period/4;
-TB_TB     <= "1000" after period/4;
-TD_TB     <= "1001" after period/4;
-DR_TB <= "01000" after period/4;
-SA_TB <= "00111" after period/4;
-SB_TB <= "00111" after period/4;
- 
---9
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101100" after period/4;
-TA_TB    <= "1001" after period/4;
-TB_TB     <= "1001" after period/4;
-TD_TB     <= "1010" after period/4;
-DR_TB <= "01001" after period/4;
-SA_TB <= "01000" after period/4;
-SB_TB <= "01000" after period/4;
- 
---10
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101101" after period/4;
-TA_TB    <= "1010" after period/4;
-TB_TB     <= "1010" after period/4;
-TD_TB     <= "1011" after period/4;
-DR_TB <= "01010" after period/4;
-SA_TB <= "01001" after period/4;
-SB_TB <= "01001" after period/4;
- 
---11
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101110" after period/4;
-TA_TB    <= "1011" after period/4;
-TB_TB     <= "1011" after period/4;
-TD_TB     <= "1100" after period/4;
-DR_TB <= "01011" after period/4;
-SA_TB <= "01010" after period/4;
-SB_TB <= "01010" after period/4;
- 
---12
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101101111" after period/4;
-TA_TB    <= "1100" after period/4;
-TB_TB     <= "1100" after period/4;
-TD_TB     <= "1101" after period/4;
-DR_TB <= "01100" after period/4;
-SA_TB <= "01011" after period/4;
-SB_TB <= "01011" after period/4;
- 
---13
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110000" after period/4;
-TA_TB    <= "1101" after period/4;
-TB_TB     <= "1101" after period/4;
-TD_TB     <= "1110" after period/4;
-DR_TB <= "01101" after period/4;
-SA_TB <= "01100" after period/4;
-SB_TB <= "01100" after period/4;
- 
---14
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101110001" after period/4;  --81
-TA_TB    <= "1110" after period/4;
-TB_TB     <= "1110" after period/4;
-TD_TB    <= "1111" after period/4;
-DR_TB <= "01110" after period/4;
-SA_TB <= "01101" after period/4;
-SB_TB <= "01101" after period/4;
+    --6(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101000" after period/2;
+    DR_TB <= "00110" after period/2;
+    TD_TB    <= "0000";
 
---15
-wait until Clock_TB'event and Clock_TB = '1';
-RW_TB    <= '1' after period/4;
-D_TB  <= "00000001010001011111110101100010" after period/4; --orig
-TA_TB    <= "1111" after period/4;
-TB_TB     <= "1111" after period/4;
-TD_TB     <= "0000" after period/4;
-DR_TB <= "01110" after period/4;
-SA_TB <= "01110" after period/4;
-SB_TB <= "01110" after period/4;
+    --7(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101001" after period/2;
+    DR_TB <= "00111" after period/2;
+    TD_TB    <= "0000";
+
+    --8(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101010" after period/2;
+    DR_TB <= "01000" after period/2;
+    TD_TB    <= "0000";
+
+    --9(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101011" after period/2;
+    DR_TB <= "01001" after period/2;
+    TD_TB    <= "0000";
+
+    --10(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101100" after period/2;
+    DR_TB <= "01010" after period/2;
+    TD_TB    <= "0000";
+
+    --11(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101101" after period/2;
+    DR_TB <= "01011" after period/2;
+    TD_TB    <= "0000";
+
+    --12(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101110" after period/2;
+    DR_TB <= "01100" after period/2;
+    TD_TB    <= "0000";
+
+    --13(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101111" after period/2;
+    DR_TB <= "01101" after period/2;
+    TD_TB    <= "0000";
+
+    --14(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110000" after period/2;
+    DR_TB <= "01110" after period/2;
+    TD_TB    <= "0000";
+
+    --15(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110001" after period/2;
+    DR_TB <= "01111" after period/2;
+    TD_TB    <= "0000";
+
+    --16(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110010" after period/2;
+    DR_TB <= "10000" after period/2;
+    TD_TB    <= "0000";
+
+    --17(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110011" after period/2;
+    DR_TB <= "10001" after period/2;
+    TD_TB    <= "0000";
+
+    --18(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110100" after period/2;
+    DR_TB <= "10010" after period/2;
+    TD_TB    <= "0000";
+
+    --19(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110101" after period/2;
+    DR_TB <= "10011" after period/2;
+    TD_TB    <= "0000";
+
+    --20(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110110" after period/2;
+    DR_TB <= "10100" after period/2;
+    TD_TB    <= "0000";
+
+    --21(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110111" after period/2;
+    DR_TB <= "10101" after period/2;
+    TD_TB    <= "0000";
+
+    --22(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111000" after period/2;
+    DR_TB <= "10110" after period/2;
+    TD_TB    <= "0000";
+
+    --23(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111001" after period/2;
+    DR_TB <= "10111" after period/2;
+    TD_TB    <= "0000";
+
+    --24(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111010" after period/2;
+    DR_TB <= "11000" after period/2;
+    TD_TB    <= "0000";
+
+    --25(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111011" after period/2;
+    DR_TB <= "11001" after period/2;
+    TD_TB    <= "0000";
+
+    --26(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111100" after period/2;
+    DR_TB <= "11010" after period/2;
+    TD_TB    <= "0000";
+
+    --27(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111101" after period/2;
+    DR_TB <= "11011" after period/2;
+    TD_TB    <= "0000";
+
+    --28(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111110" after period/2;
+    DR_TB <= "11100" after period/2;
+    TD_TB    <= "0000";
+
+    --29(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101111111" after period/2;
+    DR_TB <= "11101" after period/2;
+    TD_TB    <= "0000";
+
+    --30(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110110000000" after period/2;
+    DR_TB <= "11110" after period/2;
+    TD_TB    <= "0000";
+
+    --31(showing write to register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110110000001" after period/2;
+    DR_TB <= "11111" after period/2;
+    TD_TB    <= "0000";
+
+-- READING FROM GENERAL PURPOSE REGISTERS --
+    --0 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+
+    --1 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00001" after period/2;
+    SB_TB <= "00001" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --2 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00010" after period/2;
+    SB_TB <= "00010" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --3 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00011" after period/2;
+    SB_TB <= "00011" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --4 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00100" after period/2;
+    SB_TB <= "00100" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --5 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00101" after period/2;
+    SB_TB <= "00101" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --6 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00110" after period/2;
+    SB_TB <= "00110" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+
+    --7 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "00111" after period/2;
+    SB_TB <= "00111" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --8 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01000" after period/2;
+    SB_TB <= "01000" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --9 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01001" after period/2;
+    SB_TB <= "01001" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+
+    --10 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01010" after period/2;
+    SB_TB <= "01010" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --11 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01011" after period/2;
+    SB_TB <= "01011" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --12 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01100" after period/2;
+    SB_TB <= "01100" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --13 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01101" after period/2;
+    SB_TB <= "01101" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --14 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01110" after period/2;
+    SB_TB <= "01110" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --15 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "01111" after period/2;
+    SB_TB <= "01111" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+
+    --16 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10000" after period/2;
+    SB_TB <= "10000" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --17 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10001" after period/2;
+    SB_TB <= "10001" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --18 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10010" after period/2;
+    SB_TB <= "10010" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --19 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10011" after period/2;
+    SB_TB <= "10011" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --20 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10100" after period/2;
+    SB_TB <= "10100" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --21 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10101" after period/2;
+    SB_TB <= "10101" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --22 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10110" after period/2;
+    SB_TB <= "10110" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --23 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "10111" after period/2;
+    SB_TB <= "10111" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --24 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11000" after period/2;
+    SB_TB <= "11000" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --25 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11001" after period/2;
+    SB_TB <= "11001" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --26 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11010" after period/2;
+    SB_TB <= "11010" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --27 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11011" after period/2;
+    SB_TB <= "11011" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --28 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11100" after period/2;
+    SB_TB <= "11100" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --29 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11101" after period/2;
+    SB_TB <= "11101" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+
+    --30 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11110" after period/2;
+    SB_TB <= "11110" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
+    
+    --31 (showing read from register)
+    RW_TB    <= '1' after period/2;
+    SA_TB <= "11111" after period/2;
+    SB_TB <= "11111" after period/2;
+    TA_TB    <= "0000";
+    TB_TB    <= "0000";
 
 
---wait until Clock_TB'event and Clock_TB = '1';
---RW_TB    <= '1' after period/4;
---D_TB  <= "00000001010001011111110101100011" after period/4; --orig + 1
---TA_TB    <= "0000" after period/4;
---TB_TB     <= "0000" after period/4;
---TD_TB     <= "0001" after period/4;
---DR_TB <= "01111" after period/4;
---SA_TB <= "01111" after period/4;
---SB_TB <= "01111" after period/4;
+-- WRITING TO TEMP REGISTERS --
  
-end process ;
+    --0 (showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100011" after period/2;
+    TD_TB     <= "0001" after period/2;
+    DR_TB <= "00000" after period/2;
 
+    --1(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100100" after period/2;
+    TD_TB     <= "0010" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --2(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100101" after period/2;
+    TD_TB     <= "0011" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --3(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100110" after period/2;
+    TD_TB     <= "0100" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --4(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101100111" after period/2;
+    TD_TB     <= "0101" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --5(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101000" after period/2;
+    TD_TB     <= "0110" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --6(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101001" after period/2;
+    TD_TB     <= "0111" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --7(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101010" after period/2;
+    TD_TB     <= "1000" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --8(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101011" after period/2;
+    TD_TB     <= "1001" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --9(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101100" after period/2;
+    TD_TB     <= "1010" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --10(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101101" after period/2;
+    TD_TB     <= "1011" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --11(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101110" after period/2;
+    TD_TB     <= "1100" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --12(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101101111" after period/2;
+    TD_TB     <= "1101" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --13(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110000" after period/2;
+    TD_TB     <= "1110" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    --14(showing write to temp register)
+    wait until Clock_TB'event and Clock_TB = '1';
+    RW_TB    <= '1' after period/2;
+    D_TB  <= "00000001010001011111110101110001" after period/2;
+    TD_TB     <= "1111" after period/2;
+    DR_TB <= "00000" after period/2;
+
+    -- --15(showing write to temp register)
+    -- wait until Clock_TB'event and Clock_TB = '1';
+    -- RW_TB    <= '1' after period/2;
+    -- D_TB  <= "00000001010001011111110101100011" after period/2;
+    -- TD_TB     <= "0001" after period/2;
+    -- DR_TB <= "00000" after period/2;
+
+
+
+
+-- READING FROM TEMP REGISTERS --
+    --0 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0001" after period/2;
+    TB_TB    <= "0001" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --1 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0010" after period/2;
+    TB_TB     <= "0010" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --2 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0011" after period/2;
+    TB_TB     <= "0011" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --3 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0100" after period/2;
+    TB_TB     <= "0100" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --4 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0101" after period/2;
+    TB_TB     <= "0101" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --5 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0110" after period/2;
+    TB_TB     <= "0110" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --6 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "0111" after period/2;
+    TB_TB     <= "0111" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --7 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1000" after period/2;
+    TB_TB     <= "1000" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --8 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1001" after period/2;
+    TB_TB     <= "1001" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --9 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1010" after period/2;
+    TB_TB     <= "1010" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --10 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1011" after period/2;
+    TB_TB     <= "1011" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --11 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1100" after period/2;
+    TB_TB     <= "1100" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --12 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1101" after period/2;
+    TB_TB     <= "1101" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --13 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1110" after period/2;
+    TB_TB     <= "1110" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+    
+    --14 (showing read from temp register)
+    RW_TB    <= '1' after period/2;
+    TA_TB    <= "1111" after period/2;
+    TB_TB     <= "1111" after period/2;
+    SA_TB <= "00000" after period/2;
+    SB_TB <= "00000" after period/2;
+
+    end process ;
 end  Sim;
