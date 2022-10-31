@@ -55,17 +55,17 @@ begin
 	-- Instantiate the Unit Under Test (UUT)
 	uut : DP_ZeroDetection_21364066
 	port map(
-		input => In0_TB, 
+		In0 => In0_TB, 
 		Z => Z_TB
 	);
  
 	stim_proc : process
 	begin
 		wait for 5 ns;
-		input <= "";
+		In0_TB <= "";
  
 		wait for 5 ns; 
-		input <= "";
+		In0_TB <= "";
  
     end process;
 end Sim;
