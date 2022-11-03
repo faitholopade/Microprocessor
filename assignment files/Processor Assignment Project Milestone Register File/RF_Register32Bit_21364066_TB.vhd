@@ -83,7 +83,7 @@ begin
       
       wait until CLK_TB'event and CLK_TB='1';
       Load_TB <= '0'; -- no data loaded
-      D_TB <= "00000001010001011111110101100010";
+      D_TB <= "00000001010001011111110101100011";
    end process;
 
 end Sim;
