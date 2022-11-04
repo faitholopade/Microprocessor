@@ -117,7 +117,7 @@ begin
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
-         Clr_TB <= '0' after PERIOD/4;
+         Clr_TB <= '1' after PERIOD/4;
          
          Shift_TB <= '0' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;
@@ -126,9 +126,9 @@ begin
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
          RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
-         LoadB_TB <= '0' after PERIOD/4;
+         LoadB_TB <= '1' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
@@ -141,9 +141,9 @@ begin
       wait until Clock_TB'event and Clock_TB='1';
         
          RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
-         LoadQ_TB <= '0' after PERIOD/4;
+         LoadQ_TB <= '1' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
@@ -156,112 +156,113 @@ begin
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
+         
+         Add_TB <= '1' after PERIOD/4;  
          Shift_TB <= '0' after PERIOD/4;
-         Add_TB <= '0' after PERIOD/4;  
 
       -- Test vector - Shift - Clock Cycle 2 - P0
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+        RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
-         Shift_TB <= '0' after PERIOD/4;
+         Shift_TB <= '1' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;           
 
       -- Test vector - Add - Clock Cycle 3 
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+          RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
          Shift_TB <= '0' after PERIOD/4;
-         Add_TB <= '0' after PERIOD/4;  
+         Add_TB <= '1' after PERIOD/4;  
 
       -- Test vector - Shift - Clock Cycle 4 - P0+P1 x2^1
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+          RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
-         Shift_TB <= '0' after PERIOD/4;
+         Shift_TB <= '1' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;           
          
       -- Test vector - Shift - Clock Cycle 5 - P0+P1 x2^1+P2 x2^2
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
-         Shift_TB <= '0' after PERIOD/4;
+         Shift_TB <= '1' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4; 
          
        -- Test vector - Shift - Clock Cycle 6 - P0+P1 x2^1+P2 x2^2+P3 x2^3
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
-         Shift_TB <= '0' after PERIOD/4;
+         Shift_TB <= '1' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;         
 
       -- Test vector - Add - Clock Cycle 7 
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+      RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
          Shift_TB <= '0' after PERIOD/4;
-         Add_TB <= '0' after PERIOD/4;  
+         Add_TB <= '1' after PERIOD/4;  
 
       -- Test vector - Shift - Clock Cycle 8 - P0+P1 x2^1+P2 x2^2+P3 x2^3+P1 x2^4
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
          Clr_TB <= '0' after PERIOD/4;
          
-         Shift_TB <= '0' after PERIOD/4;
+         Shift_TB <= '1' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;           
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -270,12 +271,12 @@ begin
    
       wait until Clock_TB'event and Clock_TB='1';
         
-         RegB_TB <= "00000" after PERIOD/4; -- Mutiplicand "10111"
-         RegQ_TB <= "00000" after PERIOD/4; -- Multiplier "10011"
+         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand "10111"
+         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier "10011"
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
          
-         Clr_TB <= '0' after PERIOD/4;
+         Clr_TB <= '1' after PERIOD/4;
          
          Shift_TB <= '0' after PERIOD/4;
          Add_TB <= '0' after PERIOD/4;             
