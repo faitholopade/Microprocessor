@@ -79,29 +79,29 @@ begin
         
       wait for 20 ns;	
 
+       A_TB <= '0'; B_TB <= '0'; C_IN_TB <= '1';
+
+      wait for 20 ns;	
+		
        A_TB <= '0'; B_TB <= '1'; C_IN_TB <= '0';
+       
+      wait for 20 ns;	
+		
+	    A_TB <= '0'; B_TB <= '1'; C_IN_TB <= '1';
 
       wait for 20 ns;	
 		
        A_TB <= '1'; B_TB <= '0'; C_IN_TB <= '0';
-       
-      wait for 20 ns;	
-		
-	    A_TB <= '1'; B_TB <= '1'; C_IN_TB <= '0';
-
-      wait for 20 ns;	
-		
-       A_TB <= '0'; B_TB <= '0'; C_IN_TB <= '1';
         
       wait for 20 ns;	
 
-       A_TB <= '0'; B_TB <= '1'; C_IN_TB <= '1';
+       A_TB <= '1'; B_TB <= '0'; C_IN_TB <= '1';
 
       wait for 20 ns;	
 		
-       A_TB <= '1'; B_TB <= '0'; C_IN_TB <= '1';
+       A_TB <= '1'; B_TB <= '1'; C_IN_TB <= '0';
        
-      wait for 20 ns;	
+      wait for 10 ns;	
 		
 	   A_TB <= '1'; B_TB <= '1'; C_IN_TB <= '1';    
  
