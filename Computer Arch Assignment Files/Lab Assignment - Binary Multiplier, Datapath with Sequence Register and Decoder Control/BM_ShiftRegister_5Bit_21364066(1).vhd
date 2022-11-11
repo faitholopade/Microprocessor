@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 29.10.2022 19:57:17
 -- Design Name: 
--- Module Name: BM_ShiftRegister_5Bit_XXXXXXXX - Behavioral
+-- Module Name: BM_ShiftRegister_5Bit_21364066- Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_ShiftRegister_5Bit_XXXXXXXX is
+entity BM_ShiftRegister_5Bit_21364066is
     Port ( D : in STD_LOGIC;
            Clock : in STD_LOGIC;
            Load : in STD_LOGIC;
@@ -41,7 +41,7 @@ entity BM_ShiftRegister_5Bit_XXXXXXXX is
            Q : inout STD_LOGIC_VECTOR (4 downto 0));
 end BM_ShiftRegister_5Bit_XXXXXXXX;
 
-architecture Behavioral of BM_ShiftRegister_5Bit_XXXXXXXX is
+architecture Behavioral of BM_ShiftRegister_5Bit_21364066is
 
 begin
  

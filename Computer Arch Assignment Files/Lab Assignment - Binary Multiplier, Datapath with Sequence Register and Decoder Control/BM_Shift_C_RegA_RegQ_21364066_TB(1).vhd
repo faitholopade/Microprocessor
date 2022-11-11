@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 21:21:57
 -- Design Name: 
--- Module Name: BM_Shift_C_RegA_RegQ_XXXXXXXX_TB - Simulation
+-- Module Name: BM_Shift_C_RegA_RegQ_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Shift_C_RegA_RegQ_XXXXXXXX_TB is
+entity BM_Shift_C_RegA_RegQ_21364066_TB is
 --  Port ( ); We don't need ports 
-end BM_Shift_C_RegA_RegQ_XXXXXXXX_TB;
+end BM_Shift_C_RegA_RegQ_21364066_TB;
 
-architecture Simulation of BM_Shift_C_RegA_RegQ_XXXXXXXX_TB is
+architecture Simulation of BM_Shift_C_RegA_RegQ_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_Shift_C_RegA_RegQ_XXXXXXXX
+component BM_Shift_C_RegA_RegQ_21364066
 port ( 
       C : in STD_LOGIC;
       A_In : in STD_LOGIC_VECTOR (4 downto 0);
@@ -75,7 +75,7 @@ begin
 
 	-- Instantiate the Unit Under Test (UUT)
 	
-   uut: BM_Shift_C_RegA_RegQ_XXXXXXXX port map (     
+   uut: BM_Shift_C_RegA_RegQ_21364066 port map (     
       C => C_TB,
       A_In => A_In_TB,
       Q_In => Q_In_TB,

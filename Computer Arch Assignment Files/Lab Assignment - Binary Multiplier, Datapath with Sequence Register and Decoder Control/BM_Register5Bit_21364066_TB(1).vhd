@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 22:39:50
 -- Design Name: 
--- Module Name: BM_Register5Bit_XXXXXXXX_TB - Simulation
+-- Module Name: BM_Register5Bit_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Register5Bit_XXXXXXXX_TB is
+entity BM_Register5Bit_21364066_TB is
 --  Port ( ); We don't need ports  
-end BM_Register5Bit_XXXXXXXX_TB;
+end BM_Register5Bit_21364066_TB;
 
-architecture Simulation of BM_Register5Bit_XXXXXXXX_TB is
+architecture Simulation of BM_Register5Bit_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_Register5Bit_XXXXXXXX
+component BM_Register5Bit_21364066
 port ( 
       D : in STD_LOGIC_VECTOR (4 downto 0);
       Clr  : in STD_LOGIC;
@@ -65,7 +65,7 @@ begin
 
 	-- Instantiate the Unit Under Test (UUT)
 	
-   uut: BM_Register5Bit_XXXXXXXX port map (
+   uut: BM_Register5Bit_21364066 port map (
           D => D_TB,
           Clr => Clr_TB,
           Load => Load_TB,

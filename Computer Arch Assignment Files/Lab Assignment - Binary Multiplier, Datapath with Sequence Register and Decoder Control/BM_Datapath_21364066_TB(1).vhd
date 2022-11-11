@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 31.10.2022 09:55:55
 -- Design Name: 
--- Module Name: BM_Datapath_XXXXXXXX_TB - Simulation
+-- Module Name: BM_Datapath_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Datapath_XXXXXXXX_TB is
+entity BM_Datapath_21364066_TB is
 --  Port ( );
-end BM_Datapath_XXXXXXXX_TB;
+end BM_Datapath_21364066_TB;
 
-architecture Simulation of BM_Datapath_XXXXXXXX_TB is
+architecture Simulation of BM_Datapath_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_Datapath_XXXXXXXX
+component BM_Datapath_21364066
 Port ( 
       RegB : in STD_LOGIC_VECTOR (4 downto 0);
       RegQ : in STD_LOGIC_VECTOR (4 downto 0);
@@ -75,7 +75,7 @@ begin
 
 -- Instantiate the Unit Under Test (UUT)
 	
-   uut: BM_Datapath_XXXXXXXX port map (     
+   uut: BM_Datapath_21364066 port map (     
       RegB => RegB_TB,
       RegQ => RegQ_TB,
       LoadB => LoadB_TB,

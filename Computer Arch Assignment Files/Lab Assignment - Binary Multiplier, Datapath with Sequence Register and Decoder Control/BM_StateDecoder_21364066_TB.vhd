@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 09.11.2022 15:47:39
 -- Design Name: 
--- Module Name: BM_StateDecoder_XXXXXXXX_TB - Simulation
+-- Module Name: BM_StateDecoder_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,13 +31,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_StateDecoder_XXXXXXXX_TB is
+entity BM_StateDecoder_21364066_TB is
 --  Port ( ); We don't need ports
-end BM_StateDecoder_XXXXXXXX_TB;
+end BM_StateDecoder_21364066_TB;
 
-architecture Simulation of BM_StateDecoder_XXXXXXXX_TB is
+architecture Simulation of BM_StateDecoder_21364066_TB is
 
-component BM_StateDecoder_XXXXXXXX
+component BM_StateDecoder_21364066
      Port ( 
            A0 : in STD_LOGIC;
            A1 : in STD_LOGIC;
@@ -59,7 +59,7 @@ begin
 
 -- Instantiate the Unit Under Test (UUT)
 
-   uut:BM_StateDecoder_XXXXXXXX PORT MAP (
+   uut:BM_StateDecoder_21364066 PORT MAP (
        A0 => A0_TB,
        A1 => A1_TB,
        IDLE => IDLE_TB,

@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 29.10.2022 21:53:13
 -- Design Name: 
--- Module Name: BM_FullAdder_XXXXXXXX - Behavioral
+-- Module Name: BM_FullAdder_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,15 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_FullAdder_XXXXXXXX is
+entity BM_FullAdder_21364066 is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
            C_IN : in STD_LOGIC;
            SUM : out STD_LOGIC;
            C_OUT : out STD_LOGIC);
-end BM_FullAdder_XXXXXXXX;
+end BM_FullAdder_21364066;
 
-architecture Behavioral of BM_FullAdder_XXXXXXXX is
+architecture Behavioral of BM_FullAdder_21364066 is
 
 Signal S_XOR1_to_XOR2, S_AND1_OR, S_AND2_OR : STD_LOGIC;
 

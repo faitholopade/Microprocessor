@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 08.11.2022 18:37:22
 -- Design Name: 
--- Module Name: BM_Counter_XXXXXXXX - Behavioral
+-- Module Name: BM_Counter_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -32,14 +32,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Counter_XXXXXXXX is
+entity BM_Counter_21364066 is
     Port ( Clock : in STD_LOGIC;
            Reset : in STD_LOGIC;
            Decrement : in STD_LOGIC;
            Counter_Out : Out STD_LOGIC_VECTOR (2 downto 0));
-end BM_Counter_XXXXXXXX;
+end BM_Counter_21364066;
 
-architecture Behavioral of BM_Counter_XXXXXXXX is
+architecture Behavioral of BM_Counter_21364066 is
 
 signal Count : std_logic_vector(2 downto 0);
 

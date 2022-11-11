@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 23:15:58
 -- Design Name: 
--- Module Name: BM_Datapath_XXXXXXXX - Behavioral
+-- Module Name: BM_Datapath_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Datapath_XXXXXXXX is
+entity BM_Datapath_21364066 is
     Port ( RegB : in STD_LOGIC_VECTOR (4 downto 0);
            RegQ : in STD_LOGIC_VECTOR (4 downto 0);
            LoadB : in STD_LOGIC;
@@ -42,11 +42,11 @@ entity BM_Datapath_XXXXXXXX is
            Add : in STD_LOGIC;
            Product : out STD_LOGIC_VECTOR (9 downto 0);
            Q0 : out STD_LOGIC);
-end BM_Datapath_XXXXXXXX;
+end BM_Datapath_21364066;
 
-architecture Behavioral of BM_Datapath_XXXXXXXX is
+architecture Behavioral of BM_Datapath_21364066 is
 
-component BM_Register5Bit_XXXXXXXX
+component BM_Register5Bit_21364066
 port ( 
       D : in STD_LOGIC_VECTOR (4 downto 0);
       Clr  : in STD_LOGIC;
@@ -56,7 +56,7 @@ port (
       );
 end component;
 
-component BM_Shift_C_RegA_RegQ_XXXXXXXX
+component BM_Shift_C_RegA_RegQ_21364066
 port ( 
       C : in STD_LOGIC;
       A_In : in STD_LOGIC_VECTOR (4 downto 0);
@@ -71,7 +71,7 @@ port (
       );
 end component;
 
-component BM_RippleCarryAdder5Bit_XXXXXXXX
+component BM_RippleCarryAdder5Bit_21364066
 Port ( 
       A : in STD_LOGIC_VECTOR (4 downto 0);
       B : in STD_LOGIC_VECTOR (4 downto 0);
@@ -87,7 +87,7 @@ signal AdderC_To_ShiftC : std_logic;
     
 begin
 
-RegisterB: BM_Register5Bit_XXXXXXXX port map (
+RegisterB: BM_Register5Bit_21364066 port map (
           D => RegB,
           Clr => '0',
           Load => LoadB,
@@ -95,7 +95,7 @@ RegisterB: BM_Register5Bit_XXXXXXXX port map (
           Q => RegB_to_AdderB           
           );
           
-Adder: BM_RippleCarryAdder5Bit_XXXXXXXX PORT MAP (
+Adder: BM_RippleCarryAdder5Bit_21364066 PORT MAP (
           A => ShiftRegA_To_AdderA,
           B => RegB_to_AdderB,
           C_IN => '0',
@@ -103,7 +103,7 @@ Adder: BM_RippleCarryAdder5Bit_XXXXXXXX PORT MAP (
           C_OUT => AdderC_To_ShiftC
           );
 
-ShiftCRegARegQ: BM_Shift_C_RegA_RegQ_XXXXXXXX port map (     
+ShiftCRegARegQ: BM_Shift_C_RegA_RegQ_21364066 port map (     
           C => AdderC_To_ShiftC,
           A_In => AdderSUM_To_ShiftRegA,
           Q_In => RegQ,

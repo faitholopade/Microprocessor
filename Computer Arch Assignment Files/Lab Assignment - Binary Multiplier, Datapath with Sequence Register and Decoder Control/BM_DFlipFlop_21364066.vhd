@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 09.11.2022 15:09:27
 -- Design Name: 
--- Module Name: BM_DFlipFlop_XXXXXXXX - Behavioral
+-- Module Name: BM_DFlipFlop_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_DFlipFlop_XXXXXXXX is
+entity BM_DFlipFlop_21364066 is
     Port ( D : in STD_LOGIC;
            Reset:  in STD_LOGIC;
            Clock : in STD_LOGIC;
            Q : out STD_LOGIC);
-end BM_DFlipFlop_XXXXXXXX;
+end BM_DFlipFlop_21364066;
 
-architecture Behavioral of BM_DFlipFlop_XXXXXXXX is
+architecture Behavioral of BM_DFlipFlop_21364066 is
 
 begin
 

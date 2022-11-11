@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 09.11.2022 14:17:19
 -- Design Name: 
--- Module Name: BM_Counter_XXXXXXXX_TB - Simulation
+-- Module Name: BM_Counter_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Counter_XXXXXXXX_TB is
+entity BM_Counter_21364066_TB is
 --  Port ( );
-end BM_Counter_XXXXXXXX_TB;
+end BM_Counter_21364066_TB;
 
-architecture Simulation of BM_Counter_XXXXXXXX_TB is
+architecture Simulation of BM_Counter_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_Counter_XXXXXXXX
+component BM_Counter_21364066
 port ( 
       Clock : in STD_LOGIC;
       Reset : in STD_LOGIC;
@@ -63,7 +63,7 @@ begin
 
 	-- Instantiate the Unit Under Test (UUT)
 	
-   uut: BM_Counter_XXXXXXXX port map (     
+   uut: BM_Counter_21364066 port map (     
       Clock => Clock_TB,
       Reset => Reset_TB,
       Decrement => Decrement_TB,

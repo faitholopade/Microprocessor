@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 22:27:53
 -- Design Name: 
--- Module Name: BM_Register5Bit_XXXXXXXX - Behavioral
+-- Module Name: BM_Register5Bit_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,15 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Register5Bit_XXXXXXXX is
+entity BM_Register5Bit_21364066 is
     Port ( D : in STD_LOGIC_VECTOR (4 downto 0);
            Clr  : in STD_LOGIC;
            Load : in STD_LOGIC;
            Clock : in STD_LOGIC;
            Q : out STD_LOGIC_VECTOR (4 downto 0));
-end BM_Register5Bit_XXXXXXXX;
+end BM_Register5Bit_21364066;
 
-architecture Behavioral of BM_Register5Bit_XXXXXXXX is
+architecture Behavioral of BM_Register5Bit_21364066 is
 
 begin
 

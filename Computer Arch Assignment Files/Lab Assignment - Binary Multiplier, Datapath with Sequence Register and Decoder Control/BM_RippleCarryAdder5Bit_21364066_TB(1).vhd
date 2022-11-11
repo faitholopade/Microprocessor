@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 29.10.2022 22:54:32
 -- Design Name: 
--- Module Name: BM_RippleCarryAdder5Bit_XXXXXXXX_TB - Behavioral
+-- Module Name: BM_RippleCarryAdder5Bit_21364066_TB - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_RippleCarryAdder5Bit_XXXXXXXX_TB is
+entity BM_RippleCarryAdder5Bit_21364066_TB is
 --  Port ( );
-end BM_RippleCarryAdder5Bit_XXXXXXXX_TB;
+end BM_RippleCarryAdder5Bit_21364066_TB;
 
-architecture Simulation of BM_RippleCarryAdder5Bit_XXXXXXXX_TB is
+architecture Simulation of BM_RippleCarryAdder5Bit_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_RippleCarryAdder5Bit_XXXXXXXX
+component BM_RippleCarryAdder5Bit_21364066
 Port ( 
       A : in STD_LOGIC_VECTOR (4 downto 0);
       B : in STD_LOGIC_VECTOR (4 downto 0);
@@ -61,7 +61,7 @@ end component;
     
 begin 
 	-- Instantiate the Unit Under Test (UUT)
-uut: BM_RippleCarryAdder5Bit_XXXXXXXX PORT MAP (
+uut: BM_RippleCarryAdder5Bit_21364066 PORT MAP (
        A => A_TB,
        B => B_TB,
        C_IN => C_IN_TB,

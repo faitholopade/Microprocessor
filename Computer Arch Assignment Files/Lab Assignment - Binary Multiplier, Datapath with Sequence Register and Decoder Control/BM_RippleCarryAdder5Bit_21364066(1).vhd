@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 29.10.2022 22:07:05
 -- Design Name: 
--- Module Name: BM_RippleCarryAdder5Bit_XXXXXXXX - Behavioral
+-- Module Name: BM_RippleCarryAdder5Bit_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,17 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_RippleCarryAdder5Bit_XXXXXXXX is
+entity BM_RippleCarryAdder5Bit_21364066 is
 Port ( A : in STD_LOGIC_VECTOR (4 downto 0);
        B : in STD_LOGIC_VECTOR (4 downto 0);
        C_IN : in STD_LOGIC;
        SUM : out STD_LOGIC_VECTOR (4 downto 0);
        C_OUT : out STD_LOGIC);
-end BM_RippleCarryAdder5Bit_XXXXXXXX;
+end BM_RippleCarryAdder5Bit_21364066;
 
-architecture Behavioral of BM_RippleCarryAdder5Bit_XXXXXXXX is
+architecture Behavioral of BM_RippleCarryAdder5Bit_21364066 is
 
-COMPONENT BM_FullAdder_XXXXXXXX    
+COMPONENT BM_FullAdder_21364066    
     PORT(
          A : in STD_LOGIC;
          B : in STD_LOGIC;
@@ -56,7 +56,7 @@ Signal C0_to_C1, C1_to_C2, C2_to_C3, C3_to_C4, C4_to_COut : STD_LOGIC;
 begin
 
    -- Instantiate Full Adder Bit 0
-   BIT0: BM_FullAdder_XXXXXXXX PORT MAP (
+   BIT0: BM_FullAdder_21364066 PORT MAP (
           A => A(0),
           B => B(0),
           C_IN => C_IN,
@@ -65,7 +65,7 @@ begin
         );
 
    -- Instantiate Full Adder Bit 1
-   BIT1: BM_FullAdder_XXXXXXXX PORT MAP (
+   BIT1: BM_FullAdder_21364066 PORT MAP (
           A => A(1),
           B => B(1),
           C_IN => C0_to_C1,
@@ -74,7 +74,7 @@ begin
         );
         
    -- Instantiate Full Adder Bit 2
-   BIT2: BM_FullAdder_XXXXXXXX PORT MAP (
+   BIT2: BM_FullAdder_21364066 PORT MAP (
           A => A(2),
           B => B(2),
           C_IN => C1_to_C2,
@@ -83,7 +83,7 @@ begin
         );
         
    -- Instantiate Full Adder Bit 3
-   BIT3: BM_FullAdder_XXXXXXXX PORT MAP (
+   BIT3: BM_FullAdder_21364066 PORT MAP (
           A => A(3),
           B => B(3),
           C_IN => C2_to_C3,
@@ -92,7 +92,7 @@ begin
         );
         
        -- Instantiate Full Adder Bit 3
-   BIT4: BM_FullAdder_XXXXXXXX PORT MAP (
+   BIT4: BM_FullAdder_21364066 PORT MAP (
           A => A(4),
           B => B(4),
           C_IN => C3_to_C4,

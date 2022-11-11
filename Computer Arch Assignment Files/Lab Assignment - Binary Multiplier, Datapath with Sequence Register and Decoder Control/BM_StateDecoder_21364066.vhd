@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 09.11.2022 15:37:33
 -- Design Name: 
--- Module Name: BM_StateDecoder_XXXXXXXX - Behavioral
+-- Module Name: BM_StateDecoder_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,15 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_StateDecoder_XXXXXXXX is
+entity BM_StateDecoder_21364066 is
     Port ( A0 : in STD_LOGIC;
            A1 : in STD_LOGIC;
            IDLE : out STD_LOGIC;
            MUL0 : out STD_LOGIC;
            MUL1 : out STD_LOGIC);
-end BM_StateDecoder_XXXXXXXX;
+end BM_StateDecoder_21364066;
 
-architecture Behavioral of BM_StateDecoder_XXXXXXXX is
+architecture Behavioral of BM_StateDecoder_21364066 is
 
 begin
 

@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 10.11.2022 17:17:20
 -- Design Name: 
--- Module Name: BM_SeqRegDec_Multipier_XXXXXXXX - Behavioral
+-- Module Name: BM_SeqRegDec_Multipier_21364066- Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_SeqRegDec_Multipier_XXXXXXXX is
+entity BM_SeqRegDec_Multipier_21364066is
     Port ( Clock : in STD_LOGIC;
            FlipFlopReset : in STD_LOGIC;
            RegB : in STD_LOGIC_VECTOR (4 downto 0);
@@ -42,7 +42,7 @@ entity BM_SeqRegDec_Multipier_XXXXXXXX is
            Product : out STD_LOGIC_VECTOR (9 downto 0));
 end BM_SeqRegDec_Multipier_XXXXXXXX;
 
-architecture Behavioral of BM_SeqRegDec_Multipier_XXXXXXXX is
+architecture Behavioral of BM_SeqRegDec_Multipier_21364066is
 
 component BM_Counter_XXXXXXXX
 port ( 
@@ -86,7 +86,7 @@ end component;
 
 begin
 
-CounterP: BM_Counter_XXXXXXXX port map (     
+CounterP: BM_Counter_21364066port map (     
       Clock => Clock,
       Reset => Init,
       Decrement => Shift,
@@ -95,7 +95,7 @@ CounterP: BM_Counter_XXXXXXXX port map (
 
 Z <= NOT(Count(2)) AND NOT(Count(1)) AND NOT(Count(0)) after 2ns;
 
-ControlUnit: BM_Control_SeqRegDec_XXXXXXXX port map (     
+ControlUnit: BM_Control_SeqRegDec_21364066port map (     
       Clock => Clock,
       FlipFlopReset => FlipFlopReset,
       Z => Z,
@@ -106,7 +106,7 @@ ControlUnit: BM_Control_SeqRegDec_XXXXXXXX port map (
       Add => Add    
        );
        
-Datapath : BM_Datapath_XXXXXXXX port map (     
+Datapath : BM_Datapath_21364066port map (     
       RegB => RegB,
       RegQ => RegQ,
       LoadB => LoadB,

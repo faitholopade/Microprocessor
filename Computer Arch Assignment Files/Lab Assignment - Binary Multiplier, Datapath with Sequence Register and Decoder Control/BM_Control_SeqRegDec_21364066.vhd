@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 09.11.2022 18:55:32
 -- Design Name: 
--- Module Name: BM_Control_SeqRegDec_XXXXXXXX - Behavioral
+-- Module Name: BM_Control_SeqRegDec_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Control_SeqRegDec_XXXXXXXX is
+entity BM_Control_SeqRegDec_21364066 is
     Port ( Clock : in STD_LOGIC;
            FlipFlopReset : in STD_LOGIC;
            Z : in STD_LOGIC;
@@ -40,11 +40,11 @@ entity BM_Control_SeqRegDec_XXXXXXXX is
            Init : out STD_LOGIC;
            Shift : out STD_LOGIC;
            Add : out STD_LOGIC);
-end BM_Control_SeqRegDec_XXXXXXXX;
+end BM_Control_SeqRegDec_21364066;
 
-architecture Behavioral of BM_Control_SeqRegDec_XXXXXXXX is
+architecture Behavioral of BM_Control_SeqRegDec_21364066 is
 
-component BM_DFlipFlop_XXXXXXXX
+component BM_DFlipFlop_21364066
 port ( 
       D : in STD_LOGIC;
       Reset : in STD_LOGIC;
@@ -53,7 +53,7 @@ port (
       );
 end component;
 
-component BM_StateDecoder_XXXXXXXX
+component BM_StateDecoder_21364066
      Port ( 
            A0 : in STD_LOGIC;
            A1 : in STD_LOGIC;
@@ -74,21 +74,21 @@ NOTZero <= NOT(Z);
 ZAnd_to_Or <= MUL1_State AND NOTZero;
 Or_to_M0 <= GAnd_to_Or OR ZAnd_to_Or;
 
-M0: BM_DFlipFlop_XXXXXXXX port map (     
+M0: BM_DFlipFlop_21364066 port map (     
        D => Or_to_M0,
        Reset => FlipFlopReset,
        Clock => Clock,
        Q => M0_to_StateDecoder      
        );
 
-M1: BM_DFlipFlop_XXXXXXXX port map (     
+M1: BM_DFlipFlop_21364066 port map (     
        D => MUL0_State,
        Reset => FlipFlopReset,
        Clock => Clock,
        Q => M1_to_StateDecoder      
        );
 
-Decoder: BM_StateDecoder_XXXXXXXX PORT MAP (
+Decoder: BM_StateDecoder_21364066 PORT MAP (
        A0 => M0_to_StateDecoder,
        A1 => M1_to_StateDecoder,
        IDLE => IDLE_State,

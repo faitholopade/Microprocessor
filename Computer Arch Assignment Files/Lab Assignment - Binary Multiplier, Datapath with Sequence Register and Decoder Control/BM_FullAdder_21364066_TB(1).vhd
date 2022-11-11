@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 29.10.2022 21:58:25
 -- Design Name: 
--- Module Name: BM_FullAdder_XXXXXXXX_TB - Simulation
+-- Module Name: BM_FullAdder_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,15 +31,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_FullAdder_XXXXXXXX_TB is
+entity BM_FullAdder_21364066_TB is
 --  Port ( ); We don't need ports 
-end BM_FullAdder_XXXXXXXX_TB;
+end BM_FullAdder_21364066_TB;
 
-architecture Simulation of BM_FullAdder_XXXXXXXX_TB is
+architecture Simulation of BM_FullAdder_21364066_TB is
 
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT BM_FullAdder_XXXXXXXX
+    COMPONENT BM_FullAdder_21364066
     
     PORT(
          A : in STD_LOGIC;
@@ -63,7 +63,7 @@ architecture Simulation of BM_FullAdder_XXXXXXXX_TB is
 begin
 
 	-- Instantiate the Unit Under Test (UUT)
-   uut: BM_FullAdder_XXXXXXXX PORT MAP (
+   uut: BM_FullAdder_21364066 PORT MAP (
           A => A_TB,
           B => B_TB,
           C_IN => C_IN_TB,

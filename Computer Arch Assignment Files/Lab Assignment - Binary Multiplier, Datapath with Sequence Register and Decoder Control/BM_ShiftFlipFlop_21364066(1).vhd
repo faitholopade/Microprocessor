@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 14:30:20
 -- Design Name: 
--- Module Name: BM_ShiftFlipFlop_XXXXXXXX - Behavioral
+-- Module Name: BM_ShiftFlipFlop_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,16 +31,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_ShiftFlipFlop_XXXXXXXX is
+entity BM_ShiftFlipFlop_21364066 is
     Port ( Clock : in STD_LOGIC;
            Load : in STD_LOGIC;
            Clr : in STD_LOGIC;
            Shift : in STD_LOGIC;
            P : in STD_LOGIC;
            Q : inout STD_LOGIC);
-end BM_ShiftFlipFlop_XXXXXXXX;
+end BM_ShiftFlipFlop_21364066;
 
-architecture Behavioral of BM_ShiftFlipFlop_XXXXXXXX is
+architecture Behavioral of BM_ShiftFlipFlop_21364066 is
 
 begin
 

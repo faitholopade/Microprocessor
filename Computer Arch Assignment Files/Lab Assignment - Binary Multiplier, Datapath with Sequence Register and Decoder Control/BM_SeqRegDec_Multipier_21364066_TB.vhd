@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 10.11.2022 18:28:51
 -- Design Name: 
--- Module Name: BM_SeqRegDec_Multipier_XXXXXXXX_TB - Simulation
+-- Module Name: BM_SeqRegDec_Multipier_21364066_TB - Simulation
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_SeqRegDec_Multipier_XXXXXXXX_TB is
+entity BM_SeqRegDec_Multipier_21364066_TB is
 --  Port ( ); we don't need ports 
-end BM_SeqRegDec_Multipier_XXXXXXXX_TB;
+end BM_SeqRegDec_Multipier_21364066_TB;
 
-architecture Simulation of BM_SeqRegDec_Multipier_XXXXXXXX_TB is
+architecture Simulation of BM_SeqRegDec_Multipier_21364066_TB is
 
 -- Component Declaration for the Unit Under Test (UUT)
-component BM_SeqRegDec_Multipier_XXXXXXXX
+component BM_SeqRegDec_Multipier_21364066
 Port ( 
       Clock : in STD_LOGIC;
       FlipFlopReset : in STD_LOGIC;
@@ -71,7 +71,7 @@ begin
 
 -- Instantiate the Unit Under Test (UUT)
 	
-   uut: BM_SeqRegDec_Multipier_XXXXXXXX port map (     
+   uut: BM_SeqRegDec_Multipier_21364066 port map (     
       Clock  => Clock_TB,
       FlipFlopReset => FlipFlopReset_TB,
       RegB => RegB_TB,

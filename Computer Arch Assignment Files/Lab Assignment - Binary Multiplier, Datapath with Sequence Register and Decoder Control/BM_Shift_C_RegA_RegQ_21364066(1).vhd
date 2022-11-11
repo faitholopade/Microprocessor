@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 30.10.2022 15:05:30
 -- Design Name: 
--- Module Name: BM_Shift_C_RegA_RegQ_XXXXXXXX - Behavioral
+-- Module Name: BM_Shift_C_RegA_RegQ_21364066 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_Shift_C_RegA_RegQ_XXXXXXXX is
+entity BM_Shift_C_RegA_RegQ_21364066 is
     Port ( C : in STD_LOGIC;
            A_In : in STD_LOGIC_VECTOR (4 downto 0);
            Q_In : in STD_LOGIC_VECTOR (4 downto 0);
@@ -42,11 +42,11 @@ entity BM_Shift_C_RegA_RegQ_XXXXXXXX is
            Shift : in STD_LOGIC;
            A_Out : out STD_LOGIC_VECTOR (4 downto 0);
            Product : out STD_LOGIC_VECTOR (9 downto 0));
-end BM_Shift_C_RegA_RegQ_XXXXXXXX;
+end BM_Shift_C_RegA_RegQ_21364066;
 
-architecture Behavioral of BM_Shift_C_RegA_RegQ_XXXXXXXX is
+architecture Behavioral of BM_Shift_C_RegA_RegQ_21364066 is
 
-component BM_ShiftFlipFlop_XXXXXXXX
+component BM_ShiftFlipFlop_21364066
 port ( 
       Clock : in STD_LOGIC;
       Load : in STD_LOGIC;
@@ -57,7 +57,7 @@ port (
       );
 end component;
 
-component BM_ShiftRegister_5Bit_XXXXXXXX
+component BM_ShiftRegister_5Bit_21364066
 port ( 
       D : in STD_LOGIC;
       Clock : in STD_LOGIC;
@@ -74,7 +74,7 @@ end component;
 
 begin
 
-ShiftFlipFlopC: BM_ShiftFlipFlop_XXXXXXXX port map (     
+ShiftFlipFlopC: BM_ShiftFlipFlop_21364066 port map (     
       Clock => Clock,
       Load => LoadCRegA,
       Clr => ClrCRegA,
@@ -83,7 +83,7 @@ ShiftFlipFlopC: BM_ShiftFlipFlop_XXXXXXXX port map (
       Q => C_To_RegA       
       );
 
-ShiftRegA: BM_ShiftRegister_5Bit_XXXXXXXX port map (     
+ShiftRegA: BM_ShiftRegister_5Bit_21364066 port map (     
       D => C_To_RegA,
       Clock => Clock,
       Load => LoadCRegA,
@@ -93,7 +93,7 @@ ShiftRegA: BM_ShiftRegister_5Bit_XXXXXXXX port map (
       Q => ShiftRegA_Out      
       );
        
-ShiftRegQ: BM_ShiftRegister_5Bit_XXXXXXXX port map (     
+ShiftRegQ: BM_ShiftRegister_5Bit_21364066 port map (     
       D => ShiftRegA_Out(0),
       Clock => Clock,
       Load => LoadRegQ,
