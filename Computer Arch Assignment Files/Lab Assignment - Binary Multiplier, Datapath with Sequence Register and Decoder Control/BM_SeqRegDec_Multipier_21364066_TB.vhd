@@ -94,8 +94,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -107,8 +107,8 @@ begin
 
          FlipFlopReset_TB <= '1' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -120,8 +120,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '1' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -133,8 +133,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '1' after PERIOD/4;
                   
@@ -146,8 +146,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -159,8 +159,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -172,8 +172,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -185,8 +185,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -198,8 +198,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -211,8 +211,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -224,8 +224,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -237,8 +237,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -250,8 +250,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   
@@ -263,8 +263,8 @@ begin
 
          FlipFlopReset_TB <= '0' after PERIOD/4;
         
-         RegB_TB <= "10111" after PERIOD/4; -- Mutiplicand
-         RegQ_TB <= "10011" after PERIOD/4; -- Multiplier 
+         RegB_TB <= "11011" after PERIOD/4; -- Mutiplicand
+         RegQ_TB <= "10010" after PERIOD/4; -- Multiplier 
          LoadB_TB <= '0' after PERIOD/4;
          LoadQ_TB <= '0' after PERIOD/4;
                   

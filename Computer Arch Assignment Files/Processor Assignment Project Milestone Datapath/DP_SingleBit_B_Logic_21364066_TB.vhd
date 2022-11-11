@@ -62,7 +62,7 @@ begin
           B => B_TB,
           S0 => S0_TB,
           S1 => S1_TB,
-          Y => Y_TB,
+          Y => Y_TB
         );
 
         
@@ -71,37 +71,37 @@ begin
    begin
     B_TB <= '0';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 10ns 
+    wait for 10ns ;
     S0_TB <= '0';
     S1_TB <= '1';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
 
     B_TB <= '1';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 10ns 
+    wait for 10ns ;
     S0_TB <= '0';
     S1_TB <= '1';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 10ns
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
 

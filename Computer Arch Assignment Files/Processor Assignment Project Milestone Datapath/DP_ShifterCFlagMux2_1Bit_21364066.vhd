@@ -37,7 +37,7 @@ entity DP_ShifterCFlagMux2_1Bit_21364066 is
         MSB : in std_logic;
         S1 : in std_logic;
         S2 : in std_logic;
-        C : out std_logic;
+        C : out std_logic
     );
 end DP_ShifterCFlagMux2_1Bit_21364066;
 

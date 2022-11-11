@@ -48,7 +48,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
               B : in std_logic;
               S0 : in std_logic;
               S1 : in std_logic;
-              G : out std_logic;
+              G : out std_logic
 
         );
     end component;

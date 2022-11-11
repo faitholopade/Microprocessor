@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_SeqRegDec_Multipier_21364066is
+entity BM_SeqRegDec_Multipier_21364066 is
     Port ( Clock : in STD_LOGIC;
            FlipFlopReset : in STD_LOGIC;
            RegB : in STD_LOGIC_VECTOR (4 downto 0);
@@ -40,11 +40,11 @@ entity BM_SeqRegDec_Multipier_21364066is
            LoadQ : in STD_LOGIC;
            G : in STD_LOGIC;
            Product : out STD_LOGIC_VECTOR (9 downto 0));
-end BM_SeqRegDec_Multipier_XXXXXXXX;
+end BM_SeqRegDec_Multipier_21364066;
 
-architecture Behavioral of BM_SeqRegDec_Multipier_21364066is
+architecture Behavioral of BM_SeqRegDec_Multipier_21364066 is
 
-component BM_Counter_XXXXXXXX
+component BM_Counter_21364066
 port ( 
       Clock : in STD_LOGIC;
       Reset : in STD_LOGIC;
@@ -53,7 +53,7 @@ port (
       );
 end component;
 
-component BM_Control_SeqRegDec_XXXXXXXX
+component BM_Control_SeqRegDec_21364066
 port ( 
       Clock : in STD_LOGIC;
       FlipFlopReset : in STD_LOGIC;
@@ -66,7 +66,7 @@ port (
       );
 end component;
 
-component BM_Datapath_XXXXXXXX
+component BM_Datapath_21364066
 Port ( 
       RegB : in STD_LOGIC_VECTOR (4 downto 0);
       RegQ : in STD_LOGIC_VECTOR (4 downto 0);
@@ -86,7 +86,7 @@ end component;
 
 begin
 
-CounterP: BM_Counter_21364066port map (     
+CounterP: BM_Counter_21364066 port map (     
       Clock => Clock,
       Reset => Init,
       Decrement => Shift,
@@ -95,7 +95,7 @@ CounterP: BM_Counter_21364066port map (
 
 Z <= NOT(Count(2)) AND NOT(Count(1)) AND NOT(Count(0)) after 2ns;
 
-ControlUnit: BM_Control_SeqRegDec_21364066port map (     
+ControlUnit: BM_Control_SeqRegDec_21364066 port map (     
       Clock => Clock,
       FlipFlopReset => FlipFlopReset,
       Z => Z,
@@ -106,7 +106,7 @@ ControlUnit: BM_Control_SeqRegDec_21364066port map (
       Add => Add    
        );
        
-Datapath : BM_Datapath_21364066port map (     
+Datapath : BM_Datapath_21364066 port map (     
       RegB => RegB,
       RegQ => RegQ,
       LoadB => LoadB,

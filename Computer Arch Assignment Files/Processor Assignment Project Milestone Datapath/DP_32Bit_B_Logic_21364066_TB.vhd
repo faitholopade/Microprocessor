@@ -40,10 +40,10 @@ architecture Sim of DP_32Bit_B_Logic_21364066_TB is
 
 component DP_32Bit_B_Logic_21364066
 port ( 
-        B in std_logic_vector(31 downto 0);
+        B : in std_logic_vector(31 downto 0);
         S0 : in std_logic;
         S1 : in std_logic;
-        Y : out std_logic_vector(31 downto 0);
+        Y : out std_logic_vector(31 downto 0)
       );
 end component;
 
@@ -60,10 +60,10 @@ begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: DP_32Bit_B_Logic_21364066 port map (
-          B => B,
-          S0 => S0,
-          S1 => S1,
-          Y => Y
+          B => B_TB,
+          S0 => S0_TB,
+          S1 => S1_TB,
+          Y => Y_TB
         );
 
         

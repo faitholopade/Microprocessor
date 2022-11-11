@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity BM_ShiftRegister_5Bit_21364066is
+entity BM_ShiftRegister_5Bit_21364066 is
     Port ( D : in STD_LOGIC;
            Clock : in STD_LOGIC;
            Load : in STD_LOGIC;
@@ -39,9 +39,9 @@ entity BM_ShiftRegister_5Bit_21364066is
            Shift : in STD_LOGIC;
            P : in STD_LOGIC_VECTOR (4 downto 0);
            Q : inout STD_LOGIC_VECTOR (4 downto 0));
-end BM_ShiftRegister_5Bit_XXXXXXXX;
+end BM_ShiftRegister_5Bit_21364066;
 
-architecture Behavioral of BM_ShiftRegister_5Bit_21364066is
+architecture Behavioral of BM_ShiftRegister_5Bit_21364066 is
 
 begin
  

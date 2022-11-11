@@ -71,14 +71,46 @@ begin
    stim_proc: process
 
    begin
-    C_ALU_TB <= "00000001010001011111110101100010";
-    C_Shift_TB <= "00000001010001011111110101100011";
+   
+    --00
+    C_ALU_TB <= '0';
+    C_Shift_TB <= '0';
 
     wait for 5ns;
     FS4_TB <= '0';
 
     wait for 5ns;
-    FS4_TB <= '1'';
+    FS4_TB <= '1';
+    
+    --01
+    C_ALU_TB <= '0';
+    C_Shift_TB <= '1';
+    
+    wait for 5ns;
+    FS4_TB <= '0';
+
+    wait for 5ns;
+    FS4_TB <= '1';
+    
+    --10
+    C_ALU_TB <= '1';
+    C_Shift_TB <= '0';
+    
+    wait for 5ns;
+    FS4_TB <= '0';
+
+    wait for 5ns;
+    FS4_TB <= '1';
+    
+    --11
+    C_ALU_TB <= '1';
+    C_Shift_TB <= '1';
+    
+    wait for 5ns;
+    FS4_TB <= '0';
+
+    wait for 5ns;
+    FS4_TB <= '1';
     
    end process;
 end Sim;
