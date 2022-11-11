@@ -2,7 +2,7 @@
 -- Company: Trinity College
 -- Engineer: Faith Olopade
 -- 
--- Create Date:    16:51:30 28/10/2022
+-- Create Date:    16:56:30 28/10/2022
 -- Design Name: 
 -- Module Name:    CPU_CPU_Mux2_32Bit_21364066_21364066
 -- Project Name: 

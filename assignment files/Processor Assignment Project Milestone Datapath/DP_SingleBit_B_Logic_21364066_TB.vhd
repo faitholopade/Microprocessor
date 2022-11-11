@@ -1,103 +1,112 @@
---------------------------------------------------------------------------------
--- Company: Trinity College
+----------------------------------------------------------------------------------
+-- Company: Trinity College architecture
 -- Engineer: Faith Olopade
---
--- Create Date:   14:50:59 01/11/2011
--- Design Name:   
--- Module Name:   
--- Project Name:  DP_SingleBit_B_Logic_21364066_TB
--- Target Device:  
--- Tool versions:  
--- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: 
+-- Create Date: 01.11.2022 14:30:00
+-- Design Name: 
+-- Module Name: DP_SingleBit_B_Logic_21364066_TB - Sim
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
 -- 
--- Dependencies:
+-- Dependencies: 
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
- 
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
- 
-ENTITY multiplexer_tb IS
-END multiplexer_tb;
- 
-ARCHITECTURE behavior OF multiplexer_tb IS 
- 
-    -- Component Declaration for the Unit Under Test (UUT)
- 
-    COMPONENT multiplexer
-    PORT(
-         s : IN  std_logic_vector(1 downto 0);
-         in1 : IN  std_logic_vector(15 downto 0);
-         in2 : IN  std_logic_vector(15 downto 0);
-         in3 : IN  std_logic_vector(15 downto 0);
-         in4 : IN  std_logic_vector(15 downto 0);
-         z : OUT  std_logic_vector(15 downto 0)
-        );
-    END COMPONENT;
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity DP_SingleBit_B_Logic_21364066_TB is
+--  Port ( ); We don't need ports
+end DP_SingleBit_B_Logic_21364066_TB;
+
+architecture Sim of DP_SingleBit_B_Logic_21364066_TB is
+-- Component Declaration for the Unit Under Test (UUT)
+
+component DP_SingleBit_B_Logic_21364066
+port ( 
+           B : in  std_logic;
+           S0, S1 : in  std_logic;
+           Y : out  std_logic
+      );
+end component;
+
+--Inputs
+
+    signal B_TB : std_logic:= '0';
+    signal S0_TB : std_logic:= '0';
+    signal S1_TB : std_logic:= '0';
+--Outputs
+
+    signal Y_TB : std_logic:= '0';
     
-
-   --Inputs
-   signal s : std_logic_vector(1 downto 0) := (others => '0');
-   signal in1 : std_logic_vector(15 downto 0) := (others => '0');
-   signal in2 : std_logic_vector(15 downto 0) := (others => '0');
-   signal in3 : std_logic_vector(15 downto 0) := (others => '0');
-   signal in4 : std_logic_vector(15 downto 0) := (others => '0');
-
- 	--Outputs
-   signal z : std_logic_vector(15 downto 0);
-   -- No clocks detected in port list. Replace <clock
-   
- --  > below with 
-   -- appropriate port name 
- 
---   constant Clk_period : time := 10 ns;
- 
-BEGIN
- 
+begin
 	-- Instantiate the Unit Under Test (UUT)
-   uut: multiplexer PORT MAP (
-          s => s,
-          in1 => in1,
-          in2 => in2,
-          in3 => in3,
-          in4 => in4,
-          z => z
+	
+   uut: DP_SingleBit_B_Logic_21364066 port map (
+          B => B_TB,
+          S0 => S0_TB,
+          S1 => S1_TB,
+          Y => Y_TB,
         );
 
+        
    stim_proc: process
-   begin		
-      in1 <= "1010101010101010";
-		in2 <= "1100110011001100";
-		in3 <= "1111000011110000";
-		in4 <= "1111111100000000";
-      wait for 10 ns;	
-      s <= "00";
 
-      wait for 10 ns;	
-		s <= "01";
+   begin
+    B_TB <= '0';
 
-      wait for 10 ns;	
-		s <= "10";
+    wait for 10ns
+    S0_TB <= '0';
+    S1_TB <= '0';
 
-      wait for 10 ns;	
-		s <= "11";
-     
- --     wait;
+    wait for 10ns 
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns
+    S0_TB <= '1';
+    S1_TB <= '0';
+
+    wait for 10ns
+    S0_TB <= '1';
+    S1_TB <= '1';
+
+    B_TB <= '1';
+
+    wait for 10ns
+    S0_TB <= '0';
+    S1_TB <= '0';
+
+    wait for 10ns 
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns
+    S0_TB <= '1';
+    S1_TB <= '0';
+
+    wait for 10ns
+    S0_TB <= '1';
+    S1_TB <= '1';
+
    end process;
+end Sim;
 
-END;
+--B 1/0
+--S0/S1- 00 01 10 11
