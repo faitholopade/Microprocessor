@@ -39,6 +39,5 @@ end DP_SingleBit_B_Logic_21364066;
 architecture Behavioral of DP_SingleBit_B_Logic_21364066 is
 
 begin
-        Y <= (B and S0) or (not B and S1); --Yi = S0Bi + S1!Bi
+    Y <= (B and S0) or (not B and S1); --Yi = S0Bi + S1!Bi
 end Behavioral;
-
