@@ -1,3 +1,5 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 ----------------------------------------------------------------------------------
 -- Company: Trinity College architecture
 -- Engineer: Faith Olopade
@@ -25,19 +27,18 @@ entity CPU_Mux2_32Bit_21364066_TB is
     -- Component Declaration for the Unit Under Test (UUT)
     
     component CPU_Mux2_32Bit_21364066
-    port ( 
-            In0 : in std_logic_vector(31 downto 0);
-            In1 : in std_logic_vector(31 downto 0);
-            Sel : in std_logic_vector(1 downto 0);
-            Z : out std_logic_vector(31 downto 0)
-          );
+    port (  In0 : in  std_logic_vector(31 downto 0);
+            In1 : in  std_logic_vector(31 downto 0);
+            Sel : in  std_logic;
+            Z : out  std_logic_vector(31 downto 0)
+      );
     end component;
     
     --Inputs
     
         signal In0_TB : std_logic_vector(31 downto 0):= (others => '0');
         signal In1_TB : std_logic_vector(31 downto 0):= (others => '0');
-        signal Sel_TB : std_logic_vector(1 downto 0):= (others => '0');
+        signal Sel_TB : std_logic := '0' ;
         
     --Outputs
     
@@ -61,9 +62,9 @@ entity CPU_Mux2_32Bit_21364066_TB is
         In1_TB <= "00000001010001011111110101100011"; --ID + 1
     
         wait for 5ns;
-        Sel_TB <= "0";
+        Sel_TB <= '0';
     
         wait for 5ns;
-        Sel_TB <= "1";
+        Sel_TB <= '1';
        end process;
     end Sim;

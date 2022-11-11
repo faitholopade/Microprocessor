@@ -63,7 +63,7 @@ begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: DP_32Bit_LogicCircuit_21364066 port map (
-          A => IA_TB,
+          A => A_TB,
           B => B_TB,
           S0 => S0_TB,
           S1 => S1_TB,
@@ -80,20 +80,23 @@ begin
     --00111101011010111100101001110100
     --ran val generator result: 1030474356
 
-    wait for 5ns;
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '1';
-
-    wait for 5ns;
+    wait for 10ns ;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 5ns;
+    wait for 10ns;
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
+    
+    wait for 10ns;
+    
    end process;
 end Sim;

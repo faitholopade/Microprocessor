@@ -57,8 +57,8 @@ architecture Behavioral of DP_SingleBit_LogicCircuit_21364066 is
         -- AXORB < A XOR B;
 
         G <=   A AND B when S0 = '0' and S1 = '0' else   
-               A OR B when S0 = '0' and S1 = '1'  else   
-               A XOR B when S0 = '1' and S1 = '0' else   
+               A OR B when S0 = '1' and S1 = '0'  else   
+               A XOR B when S0 = '0' and S1 = '1' else   
                NOT A when S0 = '1' and S1 = '1'   else 
                '0';
 

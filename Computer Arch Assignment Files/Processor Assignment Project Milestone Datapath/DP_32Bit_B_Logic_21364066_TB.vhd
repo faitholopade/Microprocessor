@@ -69,11 +69,15 @@ begin
         
    stim_proc: process
    begin
-    
+    wait for 10ns;
     B_TB <= "00000001010001011111110101100010";
     
-    wait for 10ns;
+   wait for 10ns;
     S0_TB <= '0';
+    S1_TB <= '0';
+
+    wait for 10ns ;
+    S0_TB <= '1';
     S1_TB <= '0';
 
     wait for 10ns;
@@ -82,11 +86,9 @@ begin
 
     wait for 10ns;
     S0_TB <= '1';
-    S1_TB <= '0';
-
-    wait for 10ns;
-    S0_TB <= '1';
     S1_TB <= '1';
+    
+    wait for 10ns;
 
    end process;
 end Sim;

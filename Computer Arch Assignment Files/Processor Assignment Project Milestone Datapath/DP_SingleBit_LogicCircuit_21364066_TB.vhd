@@ -75,84 +75,94 @@ begin
 
    begin
     --00
-    A_TB  <= '0';
-    B_TB <= '0';
+--    A_TB  <= '0';
+--    B_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '0';
+--    wait for 10ns;
+--    S0_TB <= '0';
+--    S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '1';
+--    wait for 10ns ;
+--    S0_TB <= '1';
+--    S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '1';
-    S1_TB <= '0';
+--    wait for 10ns;
+--    S0_TB <= '0';
+--    S1_TB <= '1';
 
-    wait for 5ns;
-    S0_TB <= '1';
-    S1_TB <= '1';
+--    wait for 10ns;
+--    S0_TB <= '1';
+--    S1_TB <= '1';
+    
+--    wait for 10ns;
 
     --01
+    wait for 10ns;
+    
     A_TB  <= '0';
     B_TB <= '1';
 
-    wait for 5ns;
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '1';
-
-    wait for 5ns;
+    wait for 10ns ;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 5ns;
+    wait for 10ns;
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
+    
+    wait for 10ns;
 
     --10
     A_TB  <= '1';
     B_TB <= '0';
 
-    wait for 5ns;
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '1';
-
-    wait for 5ns;
+    wait for 10ns ;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 5ns;
+    wait for 10ns;
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
+    
+    wait for 10ns;
 
     --11
     A_TB  <= '1';
     B_TB <= '1';
 
-    wait for 5ns;
+    wait for 10ns;
     S0_TB <= '0';
     S1_TB <= '0';
 
-    wait for 5ns;
-    S0_TB <= '0';
-    S1_TB <= '1';
-
-    wait for 5ns;
+    wait for 10ns ;
     S0_TB <= '1';
     S1_TB <= '0';
 
-    wait for 5ns;
+    wait for 10ns;
+    S0_TB <= '0';
+    S1_TB <= '1';
+
+    wait for 10ns;
     S0_TB <= '1';
     S1_TB <= '1';
+    
+    wait for 10ns;
 
 
    end process;

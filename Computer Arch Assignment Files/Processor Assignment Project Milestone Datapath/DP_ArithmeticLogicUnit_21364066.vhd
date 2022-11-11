@@ -81,7 +81,7 @@ architecture Behavioral of DP_ArithmeticLogicUnit_21364066 is
         port ( In0 : in std_logic_vector (31 downto 0);
                In1 : in std_logic_vector (31 downto 0);
                Sel : in std_logic;
-               Z : out std_logic vector (31 downto 0)
+               Z : out std_logic_vector (31 downto 0)
         );
     end component;
 
@@ -90,7 +90,7 @@ architecture Behavioral of DP_ArithmeticLogicUnit_21364066 is
     signal LogicCircOut : std_logic_vector (31 downto 0);
 
     begin
-        BLogic: DP_32Bit_LogicCircuit_21364066 port map(
+        BLogic: DP_32Bit_B_Logic_21364066 port map(
             B => B,
             S0 => S0,
             S1 => S1,

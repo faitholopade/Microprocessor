@@ -49,7 +49,7 @@ architecture Behavioral of DP_Mux3_1Bit_21364066 is
             when "00" => Z <= In00;
             when "01" => Z <= In01;
             when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
+            when others => Z <=  '0';
         end case;
     end process;
 end Behavioral;
