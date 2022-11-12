@@ -54,7 +54,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
     end component;
     
     begin
-    -- Instantiate B Logic Bit 0
+    -- Instantiate Logic Circuit Bit 0
         BIT00: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(0),
             B => B(0),
@@ -62,7 +62,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(0)
         );
-    -- Instantiate B Logic Bit 1   
+    -- Instantiate Logic Circuit Bit 1   
         BIT01: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(1),
             B => B(1),
@@ -70,7 +70,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(1)
         );
-    -- Instantiate B Logic Bit 2    
+    -- Instantiate Logic Circuit Bit 2    
         BIT02: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(2),
             B => B(2),
@@ -78,7 +78,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(2)
         );
-    -- Instantiate B Logic Bit 3       
+    -- Instantiate Logic Circuit Bit 3       
         BIT03: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(3),
             B => B(3),
@@ -86,7 +86,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(3)
         );
-    -- Instantiate B Logic Bit 4     
+    -- Instantiate Logic Circuit Bit 4     
         BIT04: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(4),
             B => B(4),
@@ -94,7 +94,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(4)
         );
-    -- Instantiate B Logic Bit 5     
+    -- Instantiate Logic Circuit Bit 5     
         BIT05: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(5),
             B => B(5),
@@ -102,7 +102,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(5)
         );
-    -- Instantiate B Logic Bit 6   
+    -- Instantiate Logic Circuit Bit 6   
         BIT06: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(6),
             B => B(6),
@@ -110,7 +110,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(6)
         );
-    -- Instantiate B Logic Bit 7   
+    -- Instantiate Logic Circuit Bit 7   
         BIT07: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(7),
             B => B(7),
@@ -118,7 +118,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(7)
         );
-    -- Instantiate B Logic Bit 8    
+    -- Instantiate Logic Circuit Bit 8    
         BIT08: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(8),
             B => B(8),
@@ -126,7 +126,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(8)
         );
-    -- Instantiate B Logic Bit 9  
+    -- Instantiate Logic Circuit Bit 9  
         BIT09: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(9),
             B => B(9),
@@ -134,7 +134,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(9)
         );
-    -- Instantiate B Logic Bit 10   
+    -- Instantiate Logic Circuit Bit 10   
         BIT10: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(10),
             B => B(10),
@@ -142,7 +142,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(10)
         );
-    -- Instantiate B Logic Bit 11
+    -- Instantiate Logic Circuit Bit 11
         BIT11: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(11),
             B => B(11),
@@ -150,7 +150,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(11)
         );
-    -- Instantiate B Logic Bit 12
+    -- Instantiate Logic Circuit Bit 12
         BIT12: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(12),
             B => B(12),
@@ -158,7 +158,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(12)
         );
-    -- Instantiate B Logic Bit 13 
+    -- Instantiate Logic Circuit Bit 13 
         BIT13: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(13),
             B => B(13),
@@ -166,7 +166,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(13)
         );
-    -- Instantiate B Logic Bit 14
+    -- Instantiate Logic Circuit Bit 14
         BIT14: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(14),
             B => B(14),
@@ -174,7 +174,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(14)
         );
-    -- Instantiate B Logic Bit 15  
+    -- Instantiate Logic Circuit Bit 15  
         BIT15: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(15),
             B => B(15),
@@ -182,7 +182,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(15)
         );
-    -- Instantiate B Logic Bit 16    
+    -- Instantiate Logic Circuit Bit 16    
          BIT16: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(16),
             B => B(16),
@@ -190,7 +190,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(16)
         );
-    -- Instantiate B Logic Bit 17   
+    -- Instantiate Logic Circuit Bit 17   
         BIT17: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(17),
             B => B(17),
@@ -198,7 +198,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(17)
         );
-    -- Instantiate B Logic Bit 18   
+    -- Instantiate Logic Circuit Bit 18   
         BIT18: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(18),
             B => B(18),
@@ -206,7 +206,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(18)
         );
-    -- Instantiate B Logic Bit 19
+    -- Instantiate Logic Circuit Bit 19
         BIT19: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(19),
             B => B(19),
@@ -214,7 +214,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(19)
         );
-    -- Instantiate B Logic Bit 20  
+    -- Instantiate Logic Circuit Bit 20  
         BIT20: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(20),
             B => B(20),
@@ -222,7 +222,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(20)
         );
-    -- Instantiate B Logic Bit 21 
+    -- Instantiate Logic Circuit Bit 21 
         BIT21: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(21),
             B => B(21),
@@ -230,7 +230,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(21)
         );
-    -- Instantiate B Logic Bit 22  
+    -- Instantiate Logic Circuit Bit 22  
         BIT22: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(22),
             B => B(22),
@@ -238,7 +238,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(22)
         );
-    -- Instantiate B Logic Bit 23
+    -- Instantiate Logic Circuit Bit 23
         BIT23: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(23),
             B => B(23),
@@ -246,7 +246,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(23)
         );
-    -- Instantiate B Logic Bit 24    
+    -- Instantiate Logic Circuit Bit 24    
         BIT24: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(24),
             B => B(24),
@@ -254,7 +254,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(24)
         );
-    -- Instantiate B Logic Bit 25 
+    -- Instantiate Logic Circuit Bit 25 
         BIT25: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(25),
             B => B(25),
@@ -262,7 +262,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(25)
         );
-    -- Instantiate B Logic Bit 26 
+    -- Instantiate Logic Circuit Bit 26 
         BIT26: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(26),
             B => B(26),
@@ -270,7 +270,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(26)
         );
-    -- Instantiate B Logic Bit 27   
+    -- Instantiate Logic Circuit Bit 27   
         BIT27: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(27),
             B => B(27),
@@ -278,7 +278,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(27)
         );
-    -- Instantiate B Logic Bit 28
+    -- Instantiate Logic Circuit Bit 28
         BIT28: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(28),
             B => B(28),
@@ -286,7 +286,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(28)
         );
-    -- Instantiate B Logic Bit 29   
+    -- Instantiate Logic Circuit Bit 29   
         BIT29: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(29),
             B => B(29),
@@ -294,7 +294,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(29)
         );
-    -- Instantiate B Logic Bit 30
+    -- Instantiate Logic Circuit Bit 30
         BIT30: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(30),
             B => B(30),
@@ -302,7 +302,7 @@ architecture Behavioral of DP_32Bit_LogicCircuit_21364066 is
             S1 => S1,
             G => G(30)
         );
-    -- Instantiate B Logic Bit 31    
+    -- Instantiate Logic Circuit Bit 31    
         BIT31: DP_SingleBit_LogicCircuit_21364066 port map (
             A => A(31),
             B => B(31),

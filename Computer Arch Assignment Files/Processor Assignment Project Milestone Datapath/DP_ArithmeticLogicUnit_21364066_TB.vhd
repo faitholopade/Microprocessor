@@ -84,92 +84,96 @@ begin
    stim_proc: process
 
    begin
-    A <= "00000001010001011111110101100010"; --ID
-    B <= "00000001010001011111110101100011"; --ID + 1
-
+   wait for 100ns;
+    A_TB <= "00000001010001011111110101100010"; --ID
+    B_TB <= "00000001010001011111110101100011"; --ID + 1
+    
     --0000
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '0';
     S0_TB <= '0';
     C_IN_TB <= '0';
 
     --0001
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '0';
     S0_TB <= '0';
     C_IN_TB <= '1';
 
     --0010
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '0';
     S0_TB <= '1';
     C_IN_TB <= '0';
 
     --0011
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '0';
     S0_TB <= '1';
     C_IN_TB <= '1';
 
     --0100
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '1';
     S0_TB <= '0';
     C_IN_TB <= '0';
 
     --0101
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '1';
     S0_TB <= '0';
     C_IN_TB <= '1';
 
     --0110
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '1';
     S0_TB <= '1';
     C_IN_TB <= '0';
+    
 
     --0111
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '0';
     S1_TB <= '1';
     S0_TB <= '1';
     C_IN_TB <= '1';
     
     --100X
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '1';
     S1_TB <= '0';
     S0_TB <= '0';
-    --C_IN_TB <= '0';
+    C_IN_TB <= '0';
 
     --101X
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '1';
     S1_TB <= '0';
     S0_TB <= '1';
- --   C_IN_TB <= '0';
+    C_IN_TB <= '0';
 
     --110X
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '1';
     S1_TB <= '1';
     S0_TB <= '0';
-   -- C_IN_TB <= '0';
+    C_IN_TB <= '0';
 
     --111X
-    wait for 5ns;
+    wait for 100ns;
     S2_TB <= '1';
     S1_TB <= '1';
     S0_TB <= '1';
-   -- C_IN_TB <= '0';  
+    C_IN_TB <= '0';  
+   
+   wait for 10ns;
 
    end process;
 end Sim;

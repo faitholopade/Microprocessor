@@ -73,8 +73,8 @@ begin
    stim_proc: process
 
    begin
-    LSB_TB <= "00000001010001011111110101100010"; --ID
-    MSB_TB <= "00000001010001011111110101100011"; --ID + 1
+    LSB_TB <= '0'; --ID
+    MSB_TB <= '1'; --ID + 1
 
     wait for 5ns;
     S1_TB <= '0';
