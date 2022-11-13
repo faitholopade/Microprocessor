@@ -40,13 +40,13 @@ architecture Sim of DP_ZeroDetection_21364066_TB is
 
 component DP_ZeroDetection_21364066
 	port (
-		In0 : in std_logic_vector(31 downto 0);
+		MuxF_to_F : in std_logic_vector(31 downto 0);
 		Z : out std_logic
 	);
 end component;
  
 --Inputs
-signal In0_TB : std_logic_vector(31 downto 0) := (others => '0');
+signal MuxF_to_F_TB : std_logic_vector(31 downto 0) := (others => '0');
 
 --Outputs
 signal Z_TB : std_logic := '0';
@@ -55,17 +55,17 @@ begin
 	-- Instantiate the Unit Under Test (UUT)
 	uut : DP_ZeroDetection_21364066
 	port map(
-		In0 => In0_TB, 
+		MuxF_to_F => MuxF_to_F_TB, 
 		Z => Z_TB
 	);
  
 	stim_proc : process
 	begin
 		wait for 5 ns;
-		In0_TB <= "";
+		MuxF_to_F_TB <= "00000000000000000000000000000000";
  
 		wait for 5 ns; 
-		In0_TB <= "";
+		MuxF_to_F_TB <= "11111111111111111111111111111111";
  
     end process;
 end Sim;

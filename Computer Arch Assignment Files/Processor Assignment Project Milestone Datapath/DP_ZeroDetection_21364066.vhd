@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DP_ZeroDetection_21364066 is
 	port (
-		In0 : in std_logic_vector(31 downto 0);
+		MuxF_to_F : in std_logic_vector(31 downto 0);
 		Z : out std_logic
 	);
 end DP_ZeroDetection_21364066;
@@ -41,6 +41,6 @@ end DP_ZeroDetection_21364066;
 architecture Behavioral of DP_ZeroDetection_21364066 is
  
 begin
-	Z <= '1' when In0 = "00000000000000000000000000000000" else '0';
+	Z <= '1' when MuxF_to_F = "00000000000000000000000000000000" else '0';
  
 end Behavioral;

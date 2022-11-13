@@ -72,15 +72,15 @@ begin
 
    begin
    
-    --00
-    C_ALU_TB <= '0';
-    C_Shift_TB <= '0';
+    -- --00
+    -- C_ALU_TB <= '0';
+    -- C_Shift_TB <= '0';
 
-    wait for 5ns;
-    FS4_TB <= '0';
+    -- wait for 5ns;
+    -- FS4_TB <= '0';
 
-    wait for 5ns;
-    FS4_TB <= '1';
+    -- wait for 5ns;
+    -- FS4_TB <= '1';
     
     --01
     C_ALU_TB <= '0';
@@ -92,25 +92,25 @@ begin
     wait for 5ns;
     FS4_TB <= '1';
     
-    --10
-    C_ALU_TB <= '1';
-    C_Shift_TB <= '0';
+    -- --10
+    -- C_ALU_TB <= '1';
+    -- C_Shift_TB <= '0';
     
-    wait for 5ns;
-    FS4_TB <= '0';
+    -- wait for 5ns;
+    -- FS4_TB <= '0';
 
-    wait for 5ns;
-    FS4_TB <= '1';
+    -- wait for 5ns;
+    -- FS4_TB <= '1';
     
-    --11
-    C_ALU_TB <= '1';
-    C_Shift_TB <= '1';
+    -- --11
+    -- C_ALU_TB <= '1';
+    -- C_Shift_TB <= '1';
     
-    wait for 5ns;
-    FS4_TB <= '0';
+    -- wait for 5ns;
+    -- FS4_TB <= '0';
 
-    wait for 5ns;
-    FS4_TB <= '1';
+    -- wait for 5ns;
+    -- FS4_TB <= '1';
     
    end process;
 end Sim;

@@ -29,27 +29,127 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
 --library UNISIM;
---use UNISIM.VComponents.all;
+--use UNISIM.Vcomponents.all;
 
 entity DP_Datapath_21364066 is
     port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
-        );
+        IR_IN : in std_logic_vector(31 downto 0);
+        MB : in std_logic;
+        DATA_IN : in std_logic_vector(31 downto 0);
+        MD : in std_logic;
+        FS : in std_logic_vector(4 downto 0);
+        Clock : in std_logic;
+        DR : in std_logic_vector(4 downto 0);
+        RW : in std_logic;
+        SA : in std_logic_vector(4 downto 0);
+        SB : in std_logic_vector(4 downto 0);
+        TA : in std_logic_vector(3 downto 0);
+        TB : in std_logic_vector(3 downto 0);
+        TD : in std_logic_vector(3 downto 0);
+        
+        DATA_OUT : out std_logic_vector(31 downto 0);
+        C : out std_logic;
+        N : out std_logic;
+        V : out std_logic;
+        Z : out std_logic;
+        ADD : out std_logic_vector(31 downto 0)
+
+    );
 end DP_Datapath_21364066;
 
 architecture Behavioral of DP_Datapath_21364066 is
+
+    component RF_RegisterFile_32_15_21364066
+        port(SA: in std_logic_vector(4 downto 0); 
+            DR: in std_logic_vector(4 downto 0);
+            SB: in std_logic_vector(4 downto 0);
+            RW: in std_logic;
+            Clock: in std_logic;
+            D: in std_logic_vector(31 downto 0);
+            TB: in std_logic_vector(3 downto 0);
+            TD: in std_logic_vector(3 downto 0);
+            TA: in std_logic_vector(3 downto 0);
+            A: out std_logic_vector(31 downto 0);
+            B: out std_logic_vector(31 downto 0)
+        );
+    end component;
+    
+    component CPU_Mux2_32Bit_21364066
+        port(
+            In0 : in  std_logic_vector(31 downto 0);
+            In1 : in  std_logic_vector(31 downto 0);
+            Sel : in  std_logic;
+            Z : out  std_logic_vector(31 downto 0)
+        );
+    end component;
+    
+    component DP_FunctionalUnit_21364066
+        port(
+            B : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+            A : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+            FS : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+            C : OUT STD_LOGIC;
+            F : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+            N : OUT STD_LOGIC;
+            Z : OUT STD_LOGIC;
+            V : OUT STD_LOGIC
+        );
+    end component;
+    
+    --Internal Signals Connecting Components
+    signal B_to_D : std_logic_vector(31 downto 0);
+    signal D_to_R : std_logic_vector(31 downto 0);
+    signal RF_to_ADD : std_logic_vector(31 downto 0);
+    signal RF_to_B : std_logic_vector(31 downto 0);
+    signal FU_to_D : std_logic_vector(31 downto 0);
+
     begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+    
+    --CPU_Mux2_32Bit_21364066
+    MuxB : CPU_Mux2_32Bit_21364066 port map (
+            In0 => RF_to_B,
+            In1 => IR_IN,
+            Sel => MB,
+            Z => B_to_D
+    );
+
+    --CPU_Mux2_32Bit_21364066      
+    MuxD: CPU_Mux2_32Bit_21364066 port map (
+            In0 => FU_to_D,
+            In1 => DATA_IN,
+            Sel => MD,
+            Z => D_to_R
+    );
+
+
+    --DP_FunctionalUnit_21364066
+    FunctionalUnit : DP_FunctionalUnit_21364066 port map (
+          B => B_to_D,
+          A => RF_to_ADD,
+          FS => FS,
+          C => C,
+          F => FU_to_D,
+          N => N,
+          Z => Z,
+          V => V
+    );
+
+    --RF_RegisterFile_32_15_21364066
+    RegFile : RF_RegisterFile_32_15_21364066 port map (
+            SA => SA,
+            DR => DR,
+            SB => SB,
+            RW => RW,
+            Clock => Clock,
+            D => D_to_R,
+            TB => TB,
+            TD => TD,
+            TA => TA,
+            A => RF_to_ADD,
+            B => RF_to_B
+    );
+       
+       ADD <= RF_to_ADD;
+       DATA_OUT <= B_to_D;
+
 end Behavioral;

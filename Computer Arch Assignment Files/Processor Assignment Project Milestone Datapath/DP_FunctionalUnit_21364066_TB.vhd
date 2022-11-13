@@ -40,52 +40,99 @@ architecture Sim of DP_FunctionalUnit_21364066_TB is
 
 component DP_FunctionalUnit_21364066
 port ( 
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+        B : in std_logic_vector(31 downto 0);
+        A : in std_logic_vector(31 downto 0);
+        FS : in std_logic_vector(4 downto 0);
+        C : out std_logic;
+        F : out std_logic_vector(31 downto 0);
+        N : out std_logic;
+        Z : out std_logic;
+        V : out std_logic
       );
 end component;
 
 --Inputs
 
-    signal In00_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal In01_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal In02_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal A_TB : std_logic_vector(1 downto 0):= (others => '0');
+    signal B_TB : std_logic_vector(31 downto 0):= (others => '0');
+    signal A_TB : std_logic_vector(31 downto 0):= (others => '0');
+    signal FS_TB : std_logic_vector(4 downto 0):= (others => '0');
     
 --Outputs
 
-    signal Z_TB : std_logic_vector(31 downto 0):= (others => '0');
-    
+    signal C_TB : std_logic := '0';
+    signal F_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal N_TB : std_logic := '0';
+    signal Z_TB : std_logic := '0';
+    signal V_TB : std_logic := '0';
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: DP_FunctionalUnit_21364066 port map (
-          In00 => In00_TB,
-          In01 => In01_TB,
-          In02 => In02_TB,
+          B => B_TB,
           A => A_TB,
-          Z => Z_TB
+          FS => FS_TB,
+          C => C_TB,
+          F => F_TB,
+          N => N_TB,
+          Z => Z_TB,
+          V => V_TB
         );
 
         
    stim_proc: process
 
    begin
-    In00_TB <= "00000001010001011111110101100010";
-    In01_TB <= "00000001010001011111110101100011";
-    In02_TB <= "00000001010001011111110101100100";
+    A_TB <= "00000001010001011111110101100010"; --ID
+    B_TB <= "00000001010001011111110101101000"; --ID + 6
 
-    wait for 5ns;
-    A_TB <= "00";
+    wait for 200ns;
+    FS_TB <= "01000"; --AND 
 
-    wait for 5ns;
-    A_TB <= "01";
+    wait for 200ns;
+    FS_TB <= "01010"; --OR 
 
-    wait for 5ns;
-    A_TB <= "10";
+    wait for 200ns;
+    FS_TB <= "00110"; --A - 1 
+
+    wait for 200ns;
+    FS_TB <= "10100"; --srB 
+
+    wait for 200ns;
+    FS_TB <= "00101"; --A + 1s c B + 1 
+
+    wait for 200ns;
+    FS_TB <= "01110"; --1s c A 
+
+    wait for 200ns;
+    FS_TB <= "00100"; --A + 1s c B 
+
+    wait for 200ns;
+    FS_TB <= "10000"; --B 
+
+    wait for 200ns;
+    FS_TB <= "00011"; --A + B + 1 
+
+    wait for 200ns;
+    FS_TB <= "11000"; --slB 
+
+    wait for 200ns;
+    FS_TB <= "00010"; --A + B 
+
+    wait for 200ns;
+    FS_TB <= "00111"; --A (00111) 
+
+    wait for 200ns;
+    FS_TB <= "00000"; --A (00000) 
+
+    wait for 200ns;
+    FS_TB <= "00001"; --A + 1 
+
+    wait for 200ns;
+    FS_TB <= "01100"; --A XOR B  
+
+    wait for 200ns;
+
+    
 
    end process;
 end Sim;
