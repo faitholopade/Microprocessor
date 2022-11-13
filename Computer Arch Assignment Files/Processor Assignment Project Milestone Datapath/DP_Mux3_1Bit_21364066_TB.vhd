@@ -40,52 +40,218 @@ architecture Sim of DP_Mux3_1Bit_21364066_TB is
 
 component DP_Mux3_1Bit_21364066
 port ( 
-        In00 : in std_logic;
-        In01 : in std_logic;
-        In02 : in std_logic;
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic
+        Bi : in std_logic;
+        slBi : in std_logic;
+        srBi : in std_logic;
+        S1 : in std_logic;
+        S2 : in std_logic;
+        Gi : out std_logic
       );
 end component;
 
 --Inputs
 
-    signal In00_TB : std_logic := '0';
-    signal In01_TB : std_logic := '0';
-    signal In02_TB : std_logic := '0';
-    signal A_TB : std_logic_vector(1 downto 0):= (others => '0');
+    signal Bi_TB : std_logic := '0';
+    signal slBi_TB : std_logic := '0';
+    signal srBi_TB : std_logic := '0';
+    signal S1_TB : std_logic := '0';
+    signal S2_TB : std_logic := '0';
     
 --Outputs
 
-    signal Z_TB : std_logic := '0';
+    signal Gi_TB : std_logic := '0';
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: DP_Mux3_1Bit_21364066 port map (
-          In00 => In00_TB,
-          In01 => In01_TB,
-          In02 => In02_TB,
-          A => A_TB,
-          Z => Z_TB
+          Bi => Bi_TB,
+          slBi => slBi_TB,
+          srBi => srBi_TB,
+          S1 => S1_TB,
+          S2 => S2_TB,
+          Gi => Gi_TB
         );
 
         
    stim_proc: process
 
    begin
-    In00_TB <= '1';
-    In01_TB <= '0';
-    In02_TB <= '1';
+    -- --000
+    --     wait for 10ns;
+	-- 	Bi_TB <= '0';
+	-- 	slBi_TB <= '0';
+	-- 	srBi_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
 
-    wait for 5ns;
-    A_TB <= "00";
+    --  --001
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '0';
+	-- 	slBi_TB <= '0';
+	-- 	srBi_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
+    
+    --   --010
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '0';
+	-- 	slBi_TB <= '1';
+	-- 	srBi_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
 
-    wait for 5ns;
-    A_TB <= "01";
+    -- --011
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '0';
+	-- 	slBi_TB <= '1';
+	-- 	srBi_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
 
-    wait for 5ns;
-    A_TB <= "10";
+	-- 	--100
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '1';
+	-- 	slBi_TB <= '0';
+	-- 	srBi_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
 
+    --101
+		wait for 10ns;
+		Bi_TB <= '1';
+		slBi_TB <= '0';
+		srBi_TB <= '1';
+		
+		wait for 10ns;
+		S1_TB <= '0';
+		S2_TB <= '0';
+		
+		wait for 10ns;
+		S1_TB <= '1';
+		S2_TB <= '0';
+		
+		wait for 10ns;
+		S1_TB <= '0';
+		S2_TB <= '1';
+		
+		wait for 10ns;
+		S1_TB <= '1';
+		S2_TB <= '1';
+		
+    --     --110
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '1';
+	-- 	slBi_TB <= '1';
+	-- 	srBi_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
+		
+    --     --111
+	-- 	wait for 10ns;
+	-- 	Bi_TB <= '1';
+	-- 	slBi_TB <= '1';
+	-- 	srBi_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '0';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '0';
+	-- 	S2_TB <= '1';
+		
+	-- 	wait for 10ns;
+	-- 	S1_TB <= '1';
+	-- 	S2_TB <= '1';
+		
    end process;
 end Sim;

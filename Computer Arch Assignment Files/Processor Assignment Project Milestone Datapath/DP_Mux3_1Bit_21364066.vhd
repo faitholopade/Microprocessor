@@ -31,25 +31,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity DP_Mux3_1Bit_21364066 is
-    port (
-        In00 : in std_logic;
-        In01 : in std_logic;
-        In02 : in std_logic;
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic
-        );
-end DP_Mux3_1Bit_21364066;
+entity DP_Mux_3_1Bit_21364066 is
+    Port(
+            Bi, slBi, srBi : in std_logic;
+            S1, S2 : in std_logic;
+            Gi : out std_logic
+    );
+end DP_Mux_3_1Bit_21364066;
 
-architecture Behavioral of DP_Mux3_1Bit_21364066 is
-    begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  '0';
-        end case;
-    end process;
+architecture Behavioral of DP_Mux_3_1Bit_21364066 is
+begin
+		Gi <= Bi when S1 = '0' and S2 = '0' else
+		      srBi when S1 = '1' and S2 = '0' else
+		      slBi when S1 = '0' and S2 = '1' else
+		      '0'; --Bi ;
 end Behavioral;

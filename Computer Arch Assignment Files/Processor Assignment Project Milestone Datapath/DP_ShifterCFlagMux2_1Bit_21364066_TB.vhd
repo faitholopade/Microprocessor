@@ -73,24 +73,24 @@ begin
    stim_proc: process
 
    begin
-    LSB_TB <= '0'; --ID
-    MSB_TB <= '1'; --ID + 1
+    LSB_TB <= '0'; 
+    MSB_TB <= '1'; 
 
-    wait for 5ns;
+    wait for 10 ns;	
     S1_TB <= '0';
     S2_TB <= '0';
 
-    wait for 5ns;
+    wait for 10 ns;	
+		S1_TB <= '1';
+		S2_TB <= '0';
+		
+	  wait for 10 ns;	
     S1_TB <= '0';
     S2_TB <= '1';
 
-    wait for 5ns;
-    S1_TB <= '1';
-    S2_TB <= '0';
-
-    wait for 5ns;
-    S1_TB <= '1';
-    S2_TB <= '1';
+    wait for 10 ns;	
+		S1_TB <= '1';
+		S2_TB <= '1';
 
    end process;
 end Sim;

@@ -40,52 +40,91 @@ architecture Sim of DP_Shifter_21364066_TB is
 
 component DP_Shifter_21364066
 port ( 
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+        B : in std_logic_vector (31 downto 0);
+        S1 : in std_logic;
+        S2 : in std_logic;
+        G : out std_logic_vector (31 downto 0);
+        C : out std_logic
       );
 end component;
 
 --Inputs
 
-    signal In00_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal In01_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal In02_TB : std_logic_vector(31 downto 0):= (others => '0');
-    signal A_TB : std_logic_vector(1 downto 0):= (others => '0');
-    
+    signal B_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal S1_TB : std_logic := '0';
+    signal S2_TB : std_logic := '0';
 --Outputs
 
-    signal Z_TB : std_logic_vector(31 downto 0):= (others => '0');
-    
+    signal G_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal C_TB : std_logic := '0';
+
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: DP_Shifter_21364066 port map (
-          In00 => In00_TB,
-          In01 => In01_TB,
-          In02 => In02_TB,
-          A => A_TB,
-          Z => Z_TB
+          B => B_TB,
+          S1 => S1_TB,
+          S2 => S2_TB,
+          G => G_TB,
+          C => C_TB
         );
 
         
    stim_proc: process
 
    begin
-    In00_TB <= "00000001010001011111110101100010";
-    In01_TB <= "00000001010001011111110101100011";
-    In02_TB <= "00000001010001011111110101100100";
+    B_TB <= "00000001010001011111110101100010";
 
-    wait for 5ns;
-    A_TB <= "00";
+    -- no shift
+    wait for 100ns;
+		S1_TB <= '0';
+		S2_TB <= '0';
 
-    wait for 5ns;
-    A_TB <= "01";
+		--shift left
+		wait for 100ns;
+		S1_TB <= '0';
+		S2_TB <= '1';
 
-    wait for 5ns;
-    A_TB <= "10";
+    --shift right
+		wait for 100ns;
+		S1_TB <= '1';
+		S2_TB <= '0';
+		
+    --undefined 
+		wait for 100ns;
+		S1_TB <= '1';
+		S2_TB <= '1';
 
+    ---modified student ID to demonstrate setting and unset C flag
+
+    B_TB <= "10000001010001011111110101100011";
+
+    -- no shift
+    wait for 100ns;
+		S1_TB <= '0';
+		S2_TB <= '0';
+
+    --shift left
+		wait for 100ns;
+		S1_TB <= '0';
+		S2_TB <= '1';
+		
+    --shift right
+		wait for 100ns;
+		S1_TB <= '1';
+		S2_TB <= '0';
+		
+    --undefined 
+		wait for 100ns;
+		S1_TB <= '1';
+		S2_TB <= '1';
+		
+		
    end process;
 end Sim;
+
+-- S1 S2 Y3 Y2 Y1 Y0 Micro-ops
+-- 0 0 D3 D2 D1 D0 No Rotate
+-- 0 1 D2 D1 D0 D3 Rotate One
+-- 1 0 D1 D0 D3 D2 Rotate Two
+-- 1 1 D0 D3 D2 D1 Rotate Three

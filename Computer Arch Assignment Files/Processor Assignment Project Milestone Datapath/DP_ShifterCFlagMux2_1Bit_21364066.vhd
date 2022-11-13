@@ -43,7 +43,7 @@ end DP_ShifterCFlagMux2_1Bit_21364066;
 
 architecture Behavioral of DP_ShifterCFlagMux2_1Bit_21364066 is
     begin
-        C <= LSB when S1 = '0' and S2 = '1' else 
-             MSB when S1 = '1' and S2 = '0' else
+        C <= LSB when S1 = '1' and S2 = '0' else 
+             MSB when S1 = '0' and S2 = '1' else
              '0';
 end Behavioral;
