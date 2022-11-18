@@ -64,30 +64,30 @@ end component;
 
 --Inputs
 
-    signal IR_IN_TB : in std_logic_vector(31 downto 0);
-    signal MB_TB : in std_logic;
-    signal DATA_IN_TB : in std_logic_vector(31 downto 0);
-    signal MD_TB : in std_logic;
-    signal FS_TB : in std_logic_vector(4 downto 0);
-    signal Clock_TB : in std_logic;
-    signal DR_TB : in std_logic_vector(4 downto 0);
-    signal RW_TB : in std_logic;
-    signal SA_TB : in std_logic_vector(4 downto 0);
-    signal SB_TB : in std_logic_vector(4 downto 0);
-    signal TA_TB : in std_logic_vector(3 downto 0);
-    signal TB_TB : in std_logic_vector(3 downto 0);
-    signal TD_TB : in std_logic_vector(3 downto 0);
+    signal IR_IN_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal MB_TB : std_logic:= '0';
+    signal DATA_IN_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal MD_TB : std_logic:= '0';
+    signal FS_TB : std_logic_vector(4 downto 0) := (others => '0');
+    signal Clock_TB : std_logic:= '0';
+    signal DR_TB : std_logic_vector(4 downto 0) := (others => '0');
+    signal RW_TB : std_logic:= '0';
+    signal SA_TB : std_logic_vector(4 downto 0) := (others => '0');
+    signal SB_TB : std_logic_vector(4 downto 0) := (others => '0');
+    signal TA_TB : std_logic_vector(3 downto 0) := (others => '0');
+    signal TB_TB : std_logic_vector(3 downto 0) := (others => '0');
+    signal TD_TB : std_logic_vector(3 downto 0) := (others => '0');
     
 --Outputs
 
-    signal DATA_OUT_TB : out std_logic_vector(31 downto 0);
-    signal C_TB : out std_logic;
-    signal N_TB : out std_logic;
-    signal V_TB : out std_logic;
-    signal Z_TB : out std_logic;
-    signal ADD_TB : out std_logic_vector(31 downto 0)
+    signal DATA_OUT_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal C_TB : std_logic:= '0';
+    signal N_TB : std_logic:= '0';
+    signal V_TB : std_logic:= '0';
+    signal Z_TB : std_logic:= '0';
+    signal ADD_TB : std_logic_vector(31 downto 0) := (others => '0');
 
-    constant PERIOD : time := PERIOD; 
+    constant PERIOD : time := 200ns; 
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
@@ -123,7 +123,7 @@ begin
   --ID - 0 (General Purpose Reg 00)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101100010";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -138,7 +138,7 @@ begin
   --ID - 1 (General Purpose Reg 01)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101100001";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00001";
@@ -153,7 +153,7 @@ begin
   --ID - 2 (General Purpose Reg 02)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101100000";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00010";
@@ -164,10 +164,11 @@ begin
       TB_TB <= "0000";
       TD_TB <= "0000";
   wait for PERIOD;
+
   --ID - 3 (General Purpose Reg 03)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011111";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00011";
@@ -182,7 +183,7 @@ begin
   --ID - 4 (General Purpose Reg 04)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011110";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00100";
@@ -197,7 +198,7 @@ begin
   --ID - 5  (General Purpose Reg 05)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011101";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00101";
@@ -212,7 +213,7 @@ begin
   --ID - 6 (General Purpose Reg 06)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011100";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00110";
@@ -227,7 +228,7 @@ begin
   --ID - 7 (General Purpose Reg 07)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011011";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "00111";
@@ -242,7 +243,7 @@ begin
   --ID - 8 (General Purpose Reg 08)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011010";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01000";
@@ -257,7 +258,7 @@ begin
   --ID - 9 (General Purpose Reg 09)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011001";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01001";
@@ -272,7 +273,7 @@ begin
   --ID - 10 (General Purpose Reg 10)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011000";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01010";
@@ -287,7 +288,7 @@ begin
   --ID - 11 (General Purpose Reg 11)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010111";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01011";
@@ -302,7 +303,7 @@ begin
   --ID - 12 (General Purpose Reg 12)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010110";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01100";
@@ -317,7 +318,7 @@ begin
   --ID - 13 (General Purpose Reg 13)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010101";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01101";
@@ -332,7 +333,7 @@ begin
   --ID - 14(General Purpose Reg 14)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010100";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01110";
@@ -343,10 +344,11 @@ begin
       TB_TB <= "0000";
       TD_TB <= "0000";
   wait for PERIOD;
+
   --ID - 15 (General Purpose Reg 15)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010011";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "01111";
@@ -361,7 +363,7 @@ begin
   --ID - 16 (General Purpose Reg 16)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010010";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10000";
@@ -376,7 +378,7 @@ begin
   --ID - 17 (General Purpose Reg 17)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010001";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10001";
@@ -391,7 +393,7 @@ begin
   --ID - 18 (General Purpose Reg 18)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010000";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10010";
@@ -406,7 +408,7 @@ begin
   --ID - 19 (General Purpose Reg 19)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001111";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10011";
@@ -421,7 +423,7 @@ begin
   --ID - 20 (General Purpose Reg 20)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001110";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10100";
@@ -436,7 +438,7 @@ begin
   --ID - 21 (General Purpose Reg 21)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001101";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10101";
@@ -451,7 +453,7 @@ begin
   --ID - 22 (General Purpose Reg 22)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001100";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10110";
@@ -466,7 +468,7 @@ begin
   --ID - 23 (General Purpose Reg 23)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001011";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "10111";
@@ -477,10 +479,11 @@ begin
       TB_TB <= "0000";
       TD_TB <= "0000";
   wait for PERIOD;
+
   --ID - 24 (General Purpose Reg 24)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001010";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11000";
@@ -495,7 +498,7 @@ begin
   --ID - 25 (General Purpose Reg 25)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001001";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11001";
@@ -510,7 +513,7 @@ begin
   --ID - 26 (General Purpose Reg 26)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101001000";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11010";
@@ -525,7 +528,7 @@ begin
   --ID - 27 (General Purpose Reg 27)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101000111";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11011";
@@ -540,7 +543,7 @@ begin
   --ID - 28 (General Purpose Reg 28)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101000110";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11100";
@@ -555,7 +558,7 @@ begin
   --ID - 29 (General Purpose Reg 29)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101000101";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11101";
@@ -570,7 +573,7 @@ begin
   --ID - 30 (General Purpose Reg 30)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101000100";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11110";
@@ -581,10 +584,11 @@ begin
       TB_TB <= "0000";
       TD_TB <= "0000";
   wait for PERIOD;
+
   --ID - 31 (General Purpose Reg 31)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101000011";
       MD_TB <= '1';
       FS_TB <= "00000";
       DR_TB <= "11111";
@@ -600,7 +604,7 @@ begin
   --ID - 1 (Temp Reg01)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101100001";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -615,7 +619,7 @@ begin
   --ID - 2 (Temp Reg02)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101100000";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -625,13 +629,12 @@ begin
       TA_TB <= "0010";
       TB_TB <= "0010";
       TD_TB <= "0010";
-
   wait for PERIOD;
 
   --ID - 3 (Temp Reg03)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011111";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -646,7 +649,7 @@ begin
   --ID - 4 (Temp Reg04)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011110";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -661,7 +664,7 @@ begin
   --ID - 5 (Temp Reg05)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011101";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -676,7 +679,7 @@ begin
   --ID - 6 (Temp Reg06)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011100";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -691,7 +694,7 @@ begin
   --ID - 7 (Temp Reg07)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011011";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -707,7 +710,7 @@ begin
   --ID - 8 (Temp Reg08)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011010";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -722,7 +725,7 @@ begin
   --ID - 9 (Temp Reg09)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011001";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -738,7 +741,7 @@ begin
   --ID - 10 (Temp Reg10)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101011000";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -753,7 +756,7 @@ begin
   --ID - 11 (Temp Reg11)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010111";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -768,7 +771,7 @@ begin
   --ID - 12 (Temp Reg12)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010110";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -783,7 +786,7 @@ begin
   --ID - 13 (Temp Reg13)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010101";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -798,7 +801,7 @@ begin
   --ID - 14 (Temp Reg14)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010100";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -813,7 +816,7 @@ begin
   --ID - 15 (Temp Reg15)
   wait until Clock_TB'event and Clock_TB='1';
       MB_TB <= '0';
-      DATA_IN_TB <= 00000001010001011111110101100010;
+      DATA_IN_TB <= "00000001010001011111110101010011";
       MD_TB <= '1';       
       FS_TB <= "00000";
       DR_TB <= "00000";
@@ -826,6 +829,7 @@ begin
   wait for PERIOD;
 
   --PERFORMING FUNCTIONAL UNIT OPERATIONS--
+
 --00110 DR (Last Dig ID)
 --01011 SA (Last Dig ID + 5)
 --10101 SB (Last Dig ID + 15)
