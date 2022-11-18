@@ -20,7 +20,7 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -58,7 +58,7 @@ entity DP_Datapath_21364066 is
 end DP_Datapath_21364066;
 
 architecture Behavioral of DP_Datapath_21364066 is
-
+--RF_RegisterFile_32_15_21364066
     component RF_RegisterFile_32_15_21364066
         port(SA: in std_logic_vector(4 downto 0); 
             DR: in std_logic_vector(4 downto 0);
@@ -73,7 +73,7 @@ architecture Behavioral of DP_Datapath_21364066 is
             B: out std_logic_vector(31 downto 0)
         );
     end component;
-    
+--CPU_Mux2_32Bit_21364066
     component CPU_Mux2_32Bit_21364066
         port(
             In0 : in  std_logic_vector(31 downto 0);
@@ -82,17 +82,17 @@ architecture Behavioral of DP_Datapath_21364066 is
             Z : out  std_logic_vector(31 downto 0)
         );
     end component;
-    
+--DP_FunctionalUnit_21364066  
     component DP_FunctionalUnit_21364066
         port(
-            B : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-            A : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-            FS : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
-            C : OUT STD_LOGIC;
-            F : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            N : OUT STD_LOGIC;
-            Z : OUT STD_LOGIC;
-            V : OUT STD_LOGIC
+            B : in std_logic_vector(31 DOWNTO 0);
+            A : in std_logic_vector(31 DOWNTO 0);
+            FS : in std_logic_vector(4 DOWNTO 0);
+            C : out std_logic;
+            F : out std_logic_vector(31 DOWNTO 0);
+            N : out std_logic;
+            Z : out std_logic;
+            V : out std_logic
         );
     end component;
     
