@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 17.10.2022 23:12:00
 -- Design Name: 
--- Module Name: CPU_DFlipFlop_21364066_TB - Sim
+-- Module Name: CPU_ControlMemory_21364066_TB - Sim
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,29 +31,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity CPU_DFlipFlop_21364066_TB is
+entity CPU_ControlMemory_21364066_TB is
 --  Port ( ); We don't need ports
-end CPU_DFlipFlop_21364066_TB;
+end CPU_ControlMemory_21364066_TB;
 
-architecture Sim of CPU_DFlipFlop_21364066_TB is
+architecture Sim of CPU_ControlMemory_21364066_TB is
 -- Component Declaration for the Unit Under Test (UUT)
 
-component CPU_DFlipFlop_21364066
+component CPU_ControlMemory_21364066
 port ( 
       );
 end component;
 
 --Inputs
-    signal 
---Outputs
-    signal 
 
+    signal 
+    
+--Outputs
+
+    signal 
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
-   uut: CPU_DFlipFlop_21364066 port map (
-          
+   uut: CPU_ControlMemory_21364066 port map (
+
         );
 
         
