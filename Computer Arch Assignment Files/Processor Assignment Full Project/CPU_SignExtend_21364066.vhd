@@ -32,24 +32,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU_SignExtend_21364066 is
-    port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+    port (  Input : in std_logic_vector(9 downto 0);
+    
+            Output : out std_logic_vector(31 downto 0)
         );
 end CPU_SignExtend_21364066;
 
 architecture Behavioral of CPU_SignExtend_21364066 is
     begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+    
+
 end Behavioral;
