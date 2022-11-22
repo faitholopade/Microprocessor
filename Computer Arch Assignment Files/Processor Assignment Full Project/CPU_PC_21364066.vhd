@@ -37,19 +37,83 @@ entity CPU_PC_21364066 is
             PI : in std_logic;
             PL : in std_logic;
             Reset : in std_logic;
+
             InstAdd : out std_logic_vector(31 downto 0);
         );
 end CPU_PC_21364066;
 
 architecture Behavioral of CPU_PC_21364066 is
+    component CPU_Mux2_32Bit_21364066 is
+        port( In0 : in std_logic_vector(31 downto 0);
+              In1 : in std_logic_vector(31 downto 0);
+              Sel : in std_logic;
+
+              Z : out std_logic_vector(31 downto 0)
+        );
+    end component;
+
+    component DP_RippleCarryAdder32Bit_21364066 is
+        port(  A : in std_logic_vector(31 downto 0);
+               B : in std_logic_vector(31 downto 0);
+               C_IN : in std_logic;
+
+               SUM : out std_logic_vector(31 downto 0)
+        );
+    end component;
+
+    component RF_Register32Bit_21364066 is 
+        port(   CLK : in std_logic;
+                D : in std_logic_vector(31 downto 0);
+                Load : in std_logic;
+
+                Q : out std_logic_vector(31 downto 0)
+        );
+    end component;
+
+    --Internal Signals Connecting Components
+    signal PL_PI_Mux_to_Adder : std_logic_vector(31 downto 0);
+    signal PC_Out : std_logic_vector(31 downto 0);
+    signal Adder_to_ResetMux : std_logic_vector(31 downto 0);
+    signal ResetMux_to_PC : std_logic_vector(31 downto 0);
+
+    signal PCLoad0 : std_logic;
+    signal PCLoad1 : std_logic;
+
     begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+        
+    PCLoad0 <= Reset OR PL after 10ns;
+    PCLoad1 <= PCLoad0 OR PI after 10ns;
+
+        PL_PI_Mux : CPU_Mux2_32Bit_21364066 port map(
+            In0 => Displacement,
+            In1 => X"00000001",
+            Sel => PI,
+
+            Z => PL_PI_Mux_to_Adder
+        );
+
+        Adder : DP_RippleCarryAdder32Bit_21364066 port map(
+            A => PC_Out, 
+            B => PL_PI_Mux_to_Adder,
+            C_IN => '0',
+
+            SUM => Adder_to_ResetMux
+        );
+
+        ResetMux : CPU_Mux2_32Bit_21364066 port map(
+            In0 => Adder_to_ResetMux,
+            In1 => X"0000000F",
+            Sel => Reset,
+
+            Z => ResetMux_to_PC
+        );
+
+        PC : RF_Register32Bit_21364066 port map(
+            CLK => Clock,
+            D => ResetMux_to_PC,
+            Load => PCLoad1,
+
+            Q => InstAdd
+        );
+    
 end Behavioral;
