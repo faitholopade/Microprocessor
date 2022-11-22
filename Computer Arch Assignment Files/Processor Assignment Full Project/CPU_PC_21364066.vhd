@@ -32,12 +32,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU_PC_21364066 is
-    port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+    port (  Clock : in std_logic;
+            Displacement : in std_logic_vector(31 downto 0);
+            PI : in std_logic;
+            PL : in std_logic;
+            Reset : in std_logic;
+            InstAdd : out std_logic_vector(31 downto 0);
         );
 end CPU_PC_21364066;
 
