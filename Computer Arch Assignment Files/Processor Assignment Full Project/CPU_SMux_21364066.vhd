@@ -32,24 +32,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU_SMux_21364066 is
-    port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+    port (  C_FLag : in std_logic;
+            MS : in std_logic_vector(2 downto 0);
+            N : in std_logic;
+            Not_C_Flag : in std_logic;
+            Not_Z_Flag : in std_logic;
+            One : in std_logic;
+            V_Flag : in std_logic;
+            Z_Flag : in std_logic;
+            Zero : in std_logic;
+
+            CAR : out std_logic;
         );
 end CPU_SMux_21364066;
 
 architecture Behavioral of CPU_SMux_21364066 is
     begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+        CAR <=  Zero       after  10ns  when  MS = "000" else
+                One        after  10ns  when  MS = "001" else
+                C_Flag     after  10ns  when  MS = "010" else
+                V_FLag     after  10ns  when  MS = "011" else
+                Z_Flag     after  10ns  when  MS = "100" else
+                N          after  10ns  when  MS = "101" else
+                Not_C_Flag after  10ns  when  MS = "110" else
+                Not_Z_Flag after  10ns  when  MS = "111" else
+                '0' after 10ns;
 end Behavioral;
