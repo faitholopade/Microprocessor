@@ -40,6 +40,6 @@ end CPU_SignExtend_21364066;
 
 architecture Behavioral of CPU_SignExtend_21364066 is
     begin
-    
-
+        Output (9 downto 0) <= Input;
+        Output (31 downto 10) <= "0000000000000000000000" when Input(9) = '0' else "1111111111111111111111";
 end Behavioral;
