@@ -40,28 +40,64 @@ architecture Sim of CPU_PC_21364066_TB is
 
 component CPU_PC_21364066
 port ( 
-      );
+        Clock : in std_logic;
+        Displacement : in std_logic_vector(31 downto 0);
+        PI : in std_logic;
+        PL : in std_logic;
+        Reset : in std_logic;
+
+        InstAdd : out std_logic_vector(31 downto 0)
+    );
 end component;
 
 --Inputs
 
-    signal 
+    signal Clock_TB : std_logic := '0';
+    signal Displacement_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal PI_TB : std_logic := '0';
+    signal PL_TB : std_logic := '0';
+    signal Reset_TB : std_logic := '0';
     
 --Outputs
 
-    signal 
+    signal InstAdd_TB : std_logic_vector(31 downto 0) := (others => '0');
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_PC_21364066 port map (
+        Clock => Clock_TB,
+        Displacement => Displacement_TB,
+        PI => PI_TB,
+        PL => PL_TB, 
+        Reset => Reset_TB,
+        InstAdd => InstAdd_TB
+    );
 
-        );
+    Clock_TB <= not Clock_TB after period/2;
 
-        
    stim_proc: process
-
    begin
 
+    --RESET TO 6--
+    wait until Clock_TB'event and Clock_TB = '1';
+    Reset_TB <= '1';
+    Displacement_TB <= "00000000000000000000000000000110";
+    wait for 100ns;
+
+    --INCREMENT--
+    wait until Clock_TB'event and Clock_TB = '1';
+    Reset_TB <= '0';
+    PL_TB <= '0';
+    PI_TB <= '1';
+    wait for 100ns;
+
+    --DISPLACEMENT = 6 + 6 = 12--
+    wait until Clock_TB'event and Clock_TB = '1';
+    PI_TB <= '0';
+    PL_TB <= '1';
+    Displacement_TB <= "00000000000000000000000000001100";
+    wait for 100ns;
+    
    end process;
 end Sim;

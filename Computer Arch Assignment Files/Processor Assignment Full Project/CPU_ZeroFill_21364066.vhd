@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CPU_ZeroFill_21364066 is
     port (  
             SB : in std_logic_vector(4 downto 0);
-            MuxB : out std_logic_vector(31 downto 0);
+            MuxB : out std_logic_vector(31 downto 0)
         );
 end CPU_ZeroFill_21364066;
 

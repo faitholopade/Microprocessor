@@ -39,7 +39,7 @@ entity CPU_IR_21364066 is
             DR : out std_logic_vector(4 downto 0);
             Opcode : out std_logic_vector(16 downto 0);
             SA : out std_logic_vector(4 downto 0);
-            SB : out std_logic_vector(4 downto 0);
+            SB : out std_logic_vector(4 downto 0)
         );
 end CPU_IR_21364066;
 

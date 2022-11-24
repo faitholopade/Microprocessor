@@ -38,7 +38,7 @@ entity CPU_PC_21364066 is
             PL : in std_logic;
             Reset : in std_logic;
 
-            InstAdd : out std_logic_vector(31 downto 0);
+            InstAdd : out std_logic_vector(31 downto 0)
         );
 end CPU_PC_21364066;
 

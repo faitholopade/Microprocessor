@@ -187,11 +187,11 @@ begin
     begin
         if Clock'event and Clock='1' then
             if WriteEnable='1' then
-            RAM(to_integer(unsigned(Address(6 downto 0)))) <= DataIn after 2ns;
+            RAM(to_integer(unsigned(Address(6 downto 0)))) <= DataIn after 10ns;
             end if;
         end if;
     end process;
     
-    DataOut <= RAM(to_integer(unsigned(Address(6 downto 0)))) after 2ns;
+    DataOut <= RAM(to_integer(unsigned(Address(6 downto 0)))) after 10ns;
     
 end Behavioral;

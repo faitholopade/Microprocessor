@@ -40,28 +40,45 @@ architecture Sim of CPU_RAM_21364066_TB is
 
 component CPU_RAM_21364066
 port ( 
-      );
+        Clock : in std_logic;
+        Address : in std_logic_vector (31 downto 0);
+        DataIn : in std_logic_vector (31 downto 0);
+        WriteEnable : in std_logic;
+        DataOut : out std_logic_vector (31 downto 0)
+    );
 end component;
 
 --Inputs
 
-    signal 
+    signal Clock_TB : std_logic := '0';
+    signal Address_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal DataIn_TB : std_logic_vector(31 downto 0) := (others => '0');
+    signal WriteEnable_TB : std_logic := '0';
     
 --Outputs
 
-    signal 
+    signal DataOut_TB : std_logic_vector(31 downto 0) := (others => '0');
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_RAM_21364066 port map (
+        Clock => Clock_TB,
+        Address => Address_TB,
+        DataIn => DataIn_TB,
+        WriteEnable => WriteEnable_TB,
+        DataOut => DataOut_TB,
+    );
 
-        );
-
-        
+    Clock_TB <= not Clock_TB after period/2;
+   
    stim_proc: process
-
    begin
+    
+    WriteEnable_TB <= '1';
+    wait until Clock_TB'event and Clock_TB = '1';
+    -- DataIn_TB <= last two digits of id
+    -- Address_TB <= address 0
 
    end process;
 end Sim;

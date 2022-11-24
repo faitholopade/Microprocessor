@@ -40,28 +40,50 @@ architecture Sim of CPU_ZeroFill_21364066_TB is
 
 component CPU_ZeroFill_21364066
 port ( 
-      );
+        SB : in std_logic_vector(4 downto 0);
+        MuxB : out std_logic_vector(31 downto 0)      
+    );
 end component;
 
 --Inputs
 
-    signal 
+    signal SB_TB : std_logic_vector(4 downto 0) := (others => '0');
     
 --Outputs
 
-    signal 
+    signal MuxB_TB : std_logic_vector(31 downto 0) := (others => '0');
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_ZeroFill_21364066 port map (
-
-        );
+        SB => SB_TB,
+        MuxB => MuxB_TB
+    );
 
         
    stim_proc: process
-
    begin
+
+        wait for 100ns;
+        SB_TB <= "11111";
+        
+        wait for 100ns;
+        SB_TB <= "11100";
+        
+        wait for 100ns;
+        SB_TB <= "11011";
+        
+        wait for 100ns;
+        SB_TB <= "10001";
+        
+        wait for 100ns;
+        SB_TB <= "00000";
+        
+        wait for 100ns;
+        SB_TB <= "10101";
+
+        wait for 100ns;
 
    end process;
 end Sim;
