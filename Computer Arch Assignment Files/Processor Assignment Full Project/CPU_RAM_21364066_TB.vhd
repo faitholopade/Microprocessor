@@ -77,8 +77,19 @@ begin
     
     WriteEnable_TB <= '1';
     wait until Clock_TB'event and Clock_TB = '1';
-    -- DataIn_TB <= last two digits of id
-    -- Address_TB <= address 0
+    --INITIALIZE--
+    -- DataIn_TB <= last two digits of id in hex/binary
+    -- Address_TB <= X"00000000"
+
+    --READ--
+    -- Address_TB <= X"00000000"
+
+    --OVERWRITE--
+    -- DataIn_TB <= last two digits of id in hex/binary
+    -- Address_TB <= X"00000006"
+
+    WriteEnable_TB <= '1';
+
 
    end process;
 end Sim;
