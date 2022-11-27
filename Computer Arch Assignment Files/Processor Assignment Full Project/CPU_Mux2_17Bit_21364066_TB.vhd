@@ -40,27 +40,43 @@ architecture Sim of CPU_Mux2_17Bit_21364066_TB is
 
 component CPU_Mux2_17Bit_21364066
 port ( 
-      );
+        In0 : in std_logic_vector(16 downto 0);
+        In1 : in std_logic_vector(16 downto 0);
+        Sel : in std_logic;
+
+        Z : out std_logic_vector(16 downto 0)
+    );
 end component;
 
 --Inputs
 
-    signal 
+    signal In0_TB : std_logic_vector(16 downto 0) := (others => '0');
+    signal In1_TB : std_logic_vector(16 downto 0) := (others => '0');
+    signal Sel_TB : std_logic := '0';
     
 --Outputs
 
-    signal 
+    signal Z_TB : std_logic_vector(16 downto 0) := (others => '0');
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_Mux2_17Bit_21364066 port map (
-        );
+        In0 => In0_TB,
+        In1 => In1_TB,
+        Sel => Sel_TB,
+        Z => Z_TB
+   );
 
         
    stim_proc: process
-
    begin
 
+    In0_TB <= "00000000000000000";
+    In1_TB <= "11111111111111111";
+
+    Sel_TB <= '0';
+    Sel_TB <= '1';
+    
    end process;
 end Sim;

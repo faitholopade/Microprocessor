@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU_SMux_21364066 is
-    port (  C_FLag : in std_logic;
+    port (  C_Flag : in std_logic;
             MS : in std_logic_vector(2 downto 0);
             N : in std_logic;
             Not_C_Flag : in std_logic;
@@ -42,7 +42,7 @@ entity CPU_SMux_21364066 is
             Z_Flag : in std_logic;
             Zero : in std_logic;
 
-            CAR : out std_logic;
+            CAR : out std_logic
         );
 end CPU_SMux_21364066;
 
@@ -51,7 +51,7 @@ architecture Behavioral of CPU_SMux_21364066 is
         CAR <=  Zero       after  10ns  when  MS = "000" else
                 One        after  10ns  when  MS = "001" else
                 C_Flag     after  10ns  when  MS = "010" else
-                V_FLag     after  10ns  when  MS = "011" else
+                V_Flag     after  10ns  when  MS = "011" else
                 Z_Flag     after  10ns  when  MS = "100" else
                 N          after  10ns  when  MS = "101" else
                 Not_C_Flag after  10ns  when  MS = "110" else

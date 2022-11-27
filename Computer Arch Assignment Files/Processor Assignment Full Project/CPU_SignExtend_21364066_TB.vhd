@@ -40,28 +40,42 @@ architecture Sim of CPU_SignExtend_21364066_TB is
 
 component CPU_SignExtend_21364066
 port ( 
-      );
+        Input : in std_logic_vector(9 downto 0);
+        
+        Output : out std_logic_vector(31 downto 0)
+    );
 end component;
 
 --Inputs
 
-    signal 
+    signal Input_TB :  std_logic_vector(9 downto 0) := (others => '0');
     
 --Outputs
 
-    signal 
+    signal Output_TB :  std_logic_vector(31 downto 0) := (others => '0');
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_SignExtend_21364066 port map (
-
-        );
+        Input => Input_TB,
+        Output => Output_TB
+    );
 
         
    stim_proc: process
-
    begin
 
+    wait for 100ns;
+    Input_TB <= "0000000000";
+
+    wait for 100ns;
+    Input_TB <= "0101010101";
+
+    wait for 100ns;
+    Input_TB <= "1111111111";
+
+    wait for 100ns;
+    
    end process;
 end Sim;

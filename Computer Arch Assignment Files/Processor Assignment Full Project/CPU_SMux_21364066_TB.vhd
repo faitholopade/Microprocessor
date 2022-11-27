@@ -40,26 +40,87 @@ architecture Sim of CPU_SMux_21364066_TB is
 
 component CPU_SMux_21364066
 port ( 
+        C_Flag : in std_logic;
+        MS : in std_logic_vector(2 downto 0);
+        N : in std_logic;
+        Not_C_Flag : in std_logic;
+        Not_Z_Flag : in std_logic;
+        One : in std_logic;
+        V_Flag : in std_logic;
+        Z_Flag : in std_logic;
+        Zero : in std_logic;
 
-      );
+        CAR : out std_logic
+    );
 end component;
 
 --Inputs
-    signal 
+    signal C_Flag_TB : std_logic := '0';
+    signal MS_TB : std_logic_vector(2 downto 0) := (others => '0');
+    signal N_TB : std_logic := '0';
+    signal Not_C_Flag_TB : std_logic := '0';
+    signal Not_Z_Flag_TB : std_logic := '0';
+    signal One_TB : std_logic := '0';
+    signal V_Flag_TB : std_logic := '0';
+    signal Z_Flag_TB : std_logic := '0';
+    signal Zero_TB : std_logic := '0';
     
 --Outputs
-    signal 
+    signal CAR_TB : std_logic := '0';
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
    uut: CPU_SMux_21364066 port map (
-        );
+        C_Flag => C_Flag_TB,
+        MS => MS_TB,
+        N => N_TB,
+        Not_C_Flag => Not_C_Flag_TB,
+        Not_Z_Flag => Not_Z_Flag_TB,
+        One => One_TB,
+        V_Flag => V_Flag_TB,
+        Z_Flag => Z_Flag_TB,
+        Zero => Zero_TB,
+        
+        CAR => CAR_TB
+    );
 
         
    stim_proc: process
-
    begin
+
+    C_Flag_TB <= '1';
+    N_Flag_TB <= '0';
+    Not_C_Flag_TB <= '1';
+    Not_Z_Flag_TB <= '0';
+    One_TB <= '1';
+    V_Flag_TB <= '0';
+    Z_Flag_TB <= '1';
+    Zero_TB <= '0';
+
+    wait for 100ns;
+    MS_TB <= "000";
+
+    wait for 100ns;
+    MS_TB <= "001";
+
+    wait for 100ns;
+    MS_TB <= "010";
+
+    wait for 100ns;
+    MS_TB <= "011";
+
+    wait for 100ns;
+    MS_TB <= "100";
+
+    wait for 100ns;
+    MS_TB <= "101";
+
+    wait for 100ns;
+    MS_TB <= "110";
+
+    wait for 100ns;
+    MS_TB <= "111";
 
    end process;
 end Sim;
