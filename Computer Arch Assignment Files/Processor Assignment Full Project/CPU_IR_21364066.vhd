@@ -59,9 +59,9 @@ begin
     Register00: RF_Register32Bit_21364066 port map(
         D => Instruction,
         Load => IL,
-        CLK => Clock
+        CLK => Clock,
         Q => regOut
-    )
+    );
     -- begin
         Opcode <= regOut(31 downto 15) after 10ns ;
         DR <= regOut(14 downto 10) after 10ns     ;
