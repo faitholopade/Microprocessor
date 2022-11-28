@@ -83,13 +83,17 @@ begin
     --OUTPUT ALL 0'S'
     wait until Clock_TB'event and Clock_TB = '1';
     IL_TB <= '0';
-    Instruction_TB <= "00000000000000000000010011011110";
+    Instruction_TB <= "00000000000110100001100011000000";
+    -- Opcode          |DR   |SA  | SB  
+    -- 00000000000110100001100011000000
     wait for 100ns;
 
     --OUTPUT INSTRUCTION--
     wait until Clock_TB'event and Clock_TB = '1';
     IL_TB <= '1';
-    Instruction_TB <= "00000000000000000000010011011110";
+    Instruction_TB <= "00000000000110100001100011000000";
+    -- Opcode          |DR   |SA  | SB  
+    -- 00000000000110100001100011000000
     wait for 100ns;
 
    end process;
