@@ -59,6 +59,7 @@ end component;
 
     signal DataOut_TB : std_logic_vector(31 downto 0) := (others => '0');
     
+    constant period : time := 100ns;
 begin
 	-- Instantiate the Unit Under Test (UUT)
 	
@@ -67,7 +68,7 @@ begin
         Address => Address_TB,
         DataIn => DataIn_TB,
         WriteEnable => WriteEnable_TB,
-        DataOut => DataOut_TB,
+        DataOut => DataOut_TB
     );
 
     Clock_TB <= not Clock_TB after period/2;
@@ -110,7 +111,7 @@ begin
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
     DataIn_TB <= X"00000047";
-    Address_TB <= XX"00000005";
+    Address_TB <= X"00000005";
 
     --Address 6--
     wait until Clock_TB'event and Clock_TB = '1';
@@ -847,85 +848,85 @@ begin
 
 
     --READ--
-   --Address 0--
+    --Address 0--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000000";
+    Address_TB <= X"00000000";
 
     --Address 1--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000001";
+    Address_TB <= X"00000001";
 
     --Address 2--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000002";
+    Address_TB <= X"00000002";
 
     --Address 3--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000003";
+    Address_TB <= X"00000003";
 
     --Address 4--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000004";
+    Address_TB <= X"00000004";
 
     --Address 5--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000005";
+    Address_TB <= X"00000005";
 
     --Address 6--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000006";
+    Address_TB <= X"00000006";
 
     --Address 7--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000007";
+    Address_TB <= X"00000007";
 
     --Address 8--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000008";
+    Address_TB <= X"00000008";
 
     --Address 9--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"0000009";
+    Address_TB <= X"00000009";
 
     --Address 10--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000A";
+    Address_TB <= X"0000000A";
 
     --Address 11--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000B";
+    Address_TB <= X"0000000B";
 
     --Address 12--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000C";
+    Address_TB <= X"0000000C";
 
     --Address 13--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000D";
+    Address_TB <= X"0000000D";
 
     --Address 14--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000E";
+    Address_TB <= X"0000000E";
 
     --Address 15--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    Address_TB <= X"000000F";
+    Address_TB <= X"0000000F";
 
     --Address 16--
     wait until Clock_TB'event and Clock_TB = '1';
@@ -1493,206 +1494,206 @@ begin
     --Address 6--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"0000006";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"00000006";
 
     --Address 7--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"0000007";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"00000007";
 
     --Address 8--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"0000008";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"00000008";
 
     --Address 9--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"0000009";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"00000009";
 
     --Address 10--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"000000A";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"0000000A";
 
     --Address 11--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"000000B";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"0000000B";
 
     --Address 12--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"000000C";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"0000000C";
 
     --Address 13--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"000000D";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"0000000D";
 
     --Address 14--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
-    Address_TB <= X"000000E";
+    DataIn_TB <= X"00000000";
+    Address_TB <= X"0000000E";
 
     --Address 15--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <=  X"0000000";
-    Address_TB <= X"000000F";
+    DataIn_TB <=  X"00000000";
+    Address_TB <= X"0000000F";
 
     --Address 16--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000010";
 
     --Address 17--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000011";
 
     --Address 18--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000012";
 
     --Address 19--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000013";
 
     --Address 20--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000014";
 
     --Address 21--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000015";
 
     --Address 22--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000016";
 
     --Address 23--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000017";
 
     --Address 24--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000018";
 
     --Address 25--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000019";
 
     --Address 26--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001A";
 
     --Address 27--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001B";
 
     --Address 28--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001C";
 
     --Address 29--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001D";
 
     --Address 30--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001E";
 
     --Address 31--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"0000001F";
 
     --Address 32--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000020";
 
     --Address 33--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000021";
 
     --Address 34--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000022";
 
     --Address 35--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000023";
 
     --Address 36--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000024";
 
     --Address 37--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000025";
 
     --NO OVERWRITE WITHOUT MW = 1--
     --Address 38--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000026";
 
     --Address 39--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '0';
-    DataIn_TB <= X"0000000";
+    DataIn_TB <= X"00000000";
     Address_TB <= X"00000027";
 
    end process;

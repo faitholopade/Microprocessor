@@ -44,9 +44,32 @@ entity CPU_IR_21364066 is
 end CPU_IR_21364066;
 
 architecture Behavioral of CPU_IR_21364066 is
-    begin
-        Opcode <= Instruction(31 downto 15) after 10ns when IL = '1' and Clock = '1';
-        DR <= Instruction(14 downto 10) after 10ns when IL = '1' and Clock = '1';
-        SA <= Instruction(9 downto 5) after 10ns when IL = '1' and Clock = '1';
-        SB <= Instruction(4 downto 0) after 10ns when IL = '1' and Clock = '1';
+
+    component RF_Register32Bit_21364066
+    port(   D : in STD_LOGIC_VECTOR (31 downto 0);
+            Load : in STD_LOGIC;
+            CLK : in STD_LOGIC;
+            Q : out STD_LOGIC_VECTOR (31 downto 0)
+        );
+end component;
+
+signal regOut : std_logic_vector(31 downto 0);
+
+begin 
+    Register00: RF_Register32Bit_21364066 port map(
+        D => Instruction,
+        Load => IL,
+        CLK => Clock
+        Q => regOut
+    )
+    -- begin
+        Opcode <= regOut(31 downto 15) after 10ns ;
+        DR <= regOut(14 downto 10) after 10ns     ;
+        SA <= regOut(9 downto 5) after 10ns       ;
+        SB <= regOut(4 downto 0) after 10ns       ;
 end Behavioral;
+
+-- when IL = '1' and Clock = '1';
+-- when IL = '1' and Clock = '1';
+-- when IL = '1' and Clock = '1';
+-- when IL = '1' and Clock = '1';

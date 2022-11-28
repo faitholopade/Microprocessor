@@ -39,6 +39,7 @@ entity CPU_ZeroFill_21364066 is
 end CPU_ZeroFill_21364066;
 
 architecture Behavioral of CPU_ZeroFill_21364066 is
+begin
     MuxB(4 downto 0) <= SB after 10ns;
     MuxB(31 downto 5) <= "000000000000000000000000000" after 10ns;
 end Behavioral;
