@@ -70,12 +70,13 @@ begin
     Input_TB <= "0000000000";
 
     wait for 100ns;
-    Input_TB <= "0101010101";
+    Input_TB <= "1001010101";
 
     wait for 100ns;
-    Input_TB <= "1111111111";
+    Input_TB <= "0111111111";
 
     wait for 100ns;
+    Input_TB <= "1110000011";
     
    end process;
 end Sim;

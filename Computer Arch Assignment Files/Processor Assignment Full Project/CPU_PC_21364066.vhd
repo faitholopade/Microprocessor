@@ -80,7 +80,8 @@ architecture Behavioral of CPU_PC_21364066 is
     signal PCLoad1 : std_logic;
 
     begin
-        
+        PCLoad0 <= Reset OR PL after 10ns;
+        PCLoad1 <= PCLoad0 OR PI after 10ns;
 
         PL_PI_Mux : CPU_Mux2_32Bit_21364066 port map(
             In0 => Displacement,
@@ -91,7 +92,7 @@ architecture Behavioral of CPU_PC_21364066 is
         );
 
         Adder : DP_RippleCarryAdder32Bit_21364066 port map(
-            A => PC_Out, 
+            A => PC_Out,  --InstAdd PC_Out
             B => PL_PI_Mux_to_Adder,
             C_IN => '0',
 
@@ -100,7 +101,7 @@ architecture Behavioral of CPU_PC_21364066 is
 
         ResetMux : CPU_Mux2_32Bit_21364066 port map(
             In0 => Adder_to_ResetMux,
-            In1 => X"0000000F",
+            In1 => X"00000006",
             Sel => Reset,
 
             Z => ResetMux_to_PC
@@ -115,8 +116,5 @@ architecture Behavioral of CPU_PC_21364066 is
         );
 
     InstAdd <= PC_Out;
-    
-    PCLoad0 <= Reset OR PL after 10ns;
-    PCLoad1 <= PCLoad0 OR PI after 10ns;
 
 end Behavioral;

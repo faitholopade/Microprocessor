@@ -62,7 +62,7 @@ end component;
 
     signal InstAdd_TB : std_logic_vector(31 downto 0) := (others => '0');
 
-    constant period : time := 100ns;
+    constant period : time := 60ns;
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
@@ -84,22 +84,25 @@ begin
     --RESET TO 6--
     wait until Clock_TB'event and Clock_TB = '1';
     Reset_TB <= '1';
-    Displacement_TB <= "00000000000000000000000000000110";
-    wait for 100ns;
+    PL_TB <= '0';
+    PI_TB <= '0';
+    -- Displacement_TB <= "00000000000000000000000000000110";
+    
 
     --INCREMENT--
     wait until Clock_TB'event and Clock_TB = '1';
     Reset_TB <= '0';
     PL_TB <= '0';
     PI_TB <= '1';
-    wait for 100ns;
+    
 
     --DISPLACEMENT = 6 + 6 = 12--
     wait until Clock_TB'event and Clock_TB = '1';
+    Reset_TB <= '0';
     PI_TB <= '0';
     PL_TB <= '1';
     Displacement_TB <= "00000000000000000000000000001100";
-    wait for 100ns;
+    
     
    end process;
 end Sim;
