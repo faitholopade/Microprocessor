@@ -63,10 +63,10 @@ begin
         Q => regOut
     );
     -- begin
-        Opcode <= regOut(31 downto 15) after 10ns ;
-        DR <= regOut(14 downto 10) after 10ns     ;
-        SA <= regOut(9 downto 5) after 10ns       ;
-        SB <= regOut(4 downto 0) after 10ns       ;
+        Opcode <= regOut(31 downto 15) when IL = '1' and Clock = '1';
+        DR <= regOut(14 downto 10)     when IL = '1' and Clock = '1';
+        SA <= regOut(9 downto 5)       when IL = '1' and Clock = '1';
+        SB <= regOut(4 downto 0)       when IL = '1' and Clock = '1';
 end Behavioral;
 
 -- when IL = '1' and Clock = '1';

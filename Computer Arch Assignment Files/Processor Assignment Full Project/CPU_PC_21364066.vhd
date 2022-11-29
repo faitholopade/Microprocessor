@@ -81,8 +81,6 @@ architecture Behavioral of CPU_PC_21364066 is
 
     begin
         
-    PCLoad0 <= Reset OR PL after 10ns;
-    PCLoad1 <= PCLoad0 OR PI after 10ns;
 
         PL_PI_Mux : CPU_Mux2_32Bit_21364066 port map(
             In0 => Displacement,
@@ -113,7 +111,12 @@ architecture Behavioral of CPU_PC_21364066 is
             D => ResetMux_to_PC,
             Load => PCLoad1,
 
-            Q => InstAdd
+            Q => PC_Out
         );
+
+    InstAdd <= PC_Out;
     
+    PCLoad0 <= Reset OR PL after 10ns;
+    PCLoad1 <= PCLoad0 OR PI after 10ns;
+
 end Behavioral;

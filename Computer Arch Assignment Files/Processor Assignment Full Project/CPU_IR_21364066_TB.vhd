@@ -61,6 +61,8 @@ end component;
     signal Opcode_TB : std_logic_vector(16 downto 0) := (others => '0');
     signal  SA_TB : std_logic_vector(4 downto 0) := (others => '0');
     signal  SB_TB : std_logic_vector(4 downto 0) := (others => '0');
+
+    constant period : time := 100ns;
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
@@ -83,17 +85,17 @@ begin
     --OUTPUT ALL 0'S'
     wait until Clock_TB'event and Clock_TB = '1';
     IL_TB <= '0';
-    Instruction_TB <= "00000000000110100001100011000000";
+    Instruction_TB <= "00000000001000000001100011000000";
     -- Opcode          |DR   |SA  | SB  
-    -- 00000000000110100001100011000000
+    -- 00000000001000000001100011000000
     wait for 100ns;
 
     --OUTPUT INSTRUCTION--
     wait until Clock_TB'event and Clock_TB = '1';
     IL_TB <= '1';
-    Instruction_TB <= "00000000000110100001100011000000";
+    Instruction_TB <= "00000000001000000001100011000000";
     -- Opcode          |DR   |SA  | SB  
-    -- 00000000000110100001100011000000
+    -- 00000000001000000001100011000000
     wait for 100ns;
 
    end process;

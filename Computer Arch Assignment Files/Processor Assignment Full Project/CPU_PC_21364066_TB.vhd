@@ -61,6 +61,8 @@ end component;
 --Outputs
 
     signal InstAdd_TB : std_logic_vector(31 downto 0) := (others => '0');
+
+    constant period : time := 100ns;
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
