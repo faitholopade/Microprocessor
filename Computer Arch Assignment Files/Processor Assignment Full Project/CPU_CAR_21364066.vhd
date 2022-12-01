@@ -24,7 +24,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+use IEEE.std_logic_unsigned.all;
+
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -33,23 +36,30 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity CPU_CAR_21364066 is
     port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+                Address : in std_logic_vector(16 downto 0);
+                Clock : in std_logic;
+                LoadAdd : in std_logic;
+                Reset : in std_logic;
+
+                CMAdd : out std_logic_vector(16 downto 0)
         );
 end CPU_CAR_21364066;
 
 architecture Behavioral of CPU_CAR_21364066 is
+
+    signal CAR_Out : std_logic_vector(16 downto 0);
     begin
-    process(A, In00, In01, In02)
-        begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+    process(Reset, Clock)
+    begin
+        if rising_edge(Clock) then
+            if Reset = '1' then
+                CAR_Out <= "00000000000000110";
+            elsif LoadAdd = '1' then
+                CAR_Out <= Address;
+            else
+                CAR_Out <= CAR_Out + "00000000000000001";
+            end if;           
+        end if;
+        CMAdd <= CAR_Out;
+    end process;       
 end Behavioral;

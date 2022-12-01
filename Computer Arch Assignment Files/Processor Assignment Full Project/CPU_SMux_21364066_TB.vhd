@@ -90,8 +90,8 @@ begin
    begin
 
     C_Flag_TB <= '1';
-    N_Flag_TB <= '0';
-    Not_C_Flag_TB <= '1';
+    N_TB <= '0';
+    Not_C_Flag_TB <= '0';
     Not_Z_Flag_TB <= '0';
     One_TB <= '1';
     V_Flag_TB <= '0';

@@ -75,8 +75,13 @@ begin
     In0_TB <= "00000000000000000";
     In1_TB <= "11111111111111111";
 
+    wait for 20ns;
     Sel_TB <= '0';
+    
+    wait for 20ns;
     Sel_TB <= '1';
+
+    wait for 20ns;
     
    end process;
 end Sim;

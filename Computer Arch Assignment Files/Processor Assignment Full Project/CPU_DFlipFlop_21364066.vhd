@@ -33,23 +33,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity CPU_DFlipFlop_21364066 is
     port (
-        In00 : in std_logic_vector(31 downto 0);
-        In01 : in std_logic_vector(31 downto 0);
-        In02 : in std_logic_vector(31 downto 0);
-        A : in std_logic_vector(1 downto 0);
-        Z : out std_logic_vector(31 downto 0)
+            Clock : in std_logic;
+            D : in std_logic;
+            Enable : in std_logic;
+            Reset : in std_logic;
+
+            Q: out std_logic
         );
 end CPU_DFlipFlop_21364066;
 
 architecture Behavioral of CPU_DFlipFlop_21364066 is
     begin
-    process(A, In00, In01, In02)
+        process(Clock)
         begin 
-        case A is
-            when "00" => Z <= In00;
-            when "01" => Z <= In01;
-            when "10" => Z <= In02;
-            when others => Z <=  "00000000000000000000000000000000";
-        end case;
-    end process;
+           if rising_edge(Clock) then
+            if Reset = '1' then 
+                Q <= '0';
+            elsif Enable = '1' then
+                Q <= D;
+            end if;
+        end if;   
+        end process;
 end Behavioral;
