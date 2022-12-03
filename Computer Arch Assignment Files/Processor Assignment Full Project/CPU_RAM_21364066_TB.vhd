@@ -80,7 +80,7 @@ begin
     --Address 0--
     wait until Clock_TB'event and Clock_TB = '1';
     WriteEnable_TB <= '1';
-    DataIn_TB <= X"00000042";
+    -- DataIn_TB <= X"00000042";
     Address_TB <= X"00000000";
 
     --Address 1--

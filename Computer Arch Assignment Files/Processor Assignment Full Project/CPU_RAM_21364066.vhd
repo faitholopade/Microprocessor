@@ -44,7 +44,7 @@ architecture Behavioral of CPU_RAM_21364066 is
     -- we use the least significant 7 bits of the address
 type RAM_array is array(0 to 127) of std_logic_vector (31 downto 0);
 signal RAM : RAM_array:=(
-                X"00000000", -- 00
+                X"00000042", -- 00
                 X"00000001", -- 01
                 X"00000002", -- 02
                 X"00000003", -- 03
