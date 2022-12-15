@@ -87,7 +87,7 @@ end component;
     signal Z_TB : std_logic:= '0';
     signal ADD_TB : std_logic_vector(31 downto 0) := (others => '0');
 
-    constant PERIOD : time := 200ns; 
+    constant period : time := 200ns; 
     
 begin
 	-- Instantiate the Unit Under Test (UUT)
@@ -114,7 +114,7 @@ begin
           ADD => ADD_TB
       );
 
-      Clock_TB <= not Clock_TB after PERIOD/2;
+      Clock_TB <= not Clock_TB after period/2;
         
    stim_proc: process
 
@@ -133,7 +133,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
     
   --ID - 1 (General Purpose Reg 01)
   wait until Clock_TB'event and Clock_TB='1';
@@ -148,7 +148,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 2 (General Purpose Reg 02)
   wait until Clock_TB'event and Clock_TB='1';
@@ -163,7 +163,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 3 (General Purpose Reg 03)
   wait until Clock_TB'event and Clock_TB='1';
@@ -178,7 +178,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 4 (General Purpose Reg 04)
   wait until Clock_TB'event and Clock_TB='1';
@@ -193,7 +193,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 5  (General Purpose Reg 05)
   wait until Clock_TB'event and Clock_TB='1';
@@ -208,7 +208,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 6 (General Purpose Reg 06)
   wait until Clock_TB'event and Clock_TB='1';
@@ -223,7 +223,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 7 (General Purpose Reg 07)
   wait until Clock_TB'event and Clock_TB='1';
@@ -238,7 +238,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
       
   --ID - 8 (General Purpose Reg 08)
   wait until Clock_TB'event and Clock_TB='1';
@@ -253,7 +253,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 9 (General Purpose Reg 09)
   wait until Clock_TB'event and Clock_TB='1';
@@ -268,7 +268,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 10 (General Purpose Reg 10)
   wait until Clock_TB'event and Clock_TB='1';
@@ -283,7 +283,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 11 (General Purpose Reg 11)
   wait until Clock_TB'event and Clock_TB='1';
@@ -298,7 +298,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 12 (General Purpose Reg 12)
   wait until Clock_TB'event and Clock_TB='1';
@@ -313,7 +313,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 13 (General Purpose Reg 13)
   wait until Clock_TB'event and Clock_TB='1';
@@ -328,7 +328,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 14(General Purpose Reg 14)
   wait until Clock_TB'event and Clock_TB='1';
@@ -343,7 +343,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 15 (General Purpose Reg 15)
   wait until Clock_TB'event and Clock_TB='1';
@@ -358,7 +358,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 16 (General Purpose Reg 16)
   wait until Clock_TB'event and Clock_TB='1';
@@ -373,7 +373,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 17 (General Purpose Reg 17)
   wait until Clock_TB'event and Clock_TB='1';
@@ -388,7 +388,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 18 (General Purpose Reg 18)
   wait until Clock_TB'event and Clock_TB='1';
@@ -403,7 +403,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 19 (General Purpose Reg 19)
   wait until Clock_TB'event and Clock_TB='1';
@@ -418,7 +418,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 20 (General Purpose Reg 20)
   wait until Clock_TB'event and Clock_TB='1';
@@ -433,7 +433,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 21 (General Purpose Reg 21)
   wait until Clock_TB'event and Clock_TB='1';
@@ -448,7 +448,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 22 (General Purpose Reg 22)
   wait until Clock_TB'event and Clock_TB='1';
@@ -463,7 +463,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 23 (General Purpose Reg 23)
   wait until Clock_TB'event and Clock_TB='1';
@@ -478,7 +478,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 24 (General Purpose Reg 24)
   wait until Clock_TB'event and Clock_TB='1';
@@ -493,7 +493,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 25 (General Purpose Reg 25)
   wait until Clock_TB'event and Clock_TB='1';
@@ -508,7 +508,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 26 (General Purpose Reg 26)
   wait until Clock_TB'event and Clock_TB='1';
@@ -523,7 +523,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 27 (General Purpose Reg 27)
   wait until Clock_TB'event and Clock_TB='1';
@@ -538,7 +538,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 28 (General Purpose Reg 28)
   wait until Clock_TB'event and Clock_TB='1';
@@ -553,7 +553,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 29 (General Purpose Reg 29)
   wait until Clock_TB'event and Clock_TB='1';
@@ -568,7 +568,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 30 (General Purpose Reg 30)
   wait until Clock_TB'event and Clock_TB='1';
@@ -583,7 +583,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 31 (General Purpose Reg 31)
   wait until Clock_TB'event and Clock_TB='1';
@@ -598,7 +598,7 @@ begin
       TA_TB <= "0000";
       TB_TB <= "0000";
       TD_TB <= "0000";
-  wait for PERIOD;
+  wait for period;
 
 
   --ID - 1 (Temp Reg01)
@@ -614,7 +614,7 @@ begin
       TA_TB <= "0001";
       TB_TB <= "0001";
       TD_TB <= "0001";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 2 (Temp Reg02)
   wait until Clock_TB'event and Clock_TB='1';
@@ -629,7 +629,7 @@ begin
       TA_TB <= "0010";
       TB_TB <= "0010";
       TD_TB <= "0010";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 3 (Temp Reg03)
   wait until Clock_TB'event and Clock_TB='1';
@@ -644,7 +644,7 @@ begin
       TA_TB <= "0011";
       TB_TB <= "0011";
       TD_TB <= "0011";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 4 (Temp Reg04)
   wait until Clock_TB'event and Clock_TB='1';
@@ -659,7 +659,7 @@ begin
       TA_TB <= "0100";
       TB_TB <= "0100";
       TD_TB <= "0100";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 5 (Temp Reg05)
   wait until Clock_TB'event and Clock_TB='1';
@@ -674,7 +674,7 @@ begin
       TA_TB <= "0101";
       TB_TB <= "0101";
       TD_TB <= "0101";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 6 (Temp Reg06)
   wait until Clock_TB'event and Clock_TB='1';
@@ -689,7 +689,7 @@ begin
       TA_TB <= "0110";
       TB_TB <= "0110";
       TD_TB <= "0110";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 7 (Temp Reg07)
   wait until Clock_TB'event and Clock_TB='1';
@@ -705,7 +705,7 @@ begin
       TB_TB <= "0111";
       TD_TB <= "0111";
 
-  wait for PERIOD;
+  wait for period;
 
   --ID - 8 (Temp Reg08)
   wait until Clock_TB'event and Clock_TB='1';
@@ -720,7 +720,7 @@ begin
       TA_TB <= "1000";
       TB_TB <= "1000";
       TD_TB <= "1000";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 9 (Temp Reg09)
   wait until Clock_TB'event and Clock_TB='1';
@@ -736,7 +736,7 @@ begin
       TB_TB <= "1001";
       TD_TB <= "1001";
 
-  wait for PERIOD;
+  wait for period;
 
   --ID - 10 (Temp Reg10)
   wait until Clock_TB'event and Clock_TB='1';
@@ -751,7 +751,7 @@ begin
       TA_TB <= "1010";
       TB_TB <= "1010";
       TD_TB <= "1010";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 11 (Temp Reg11)
   wait until Clock_TB'event and Clock_TB='1';
@@ -766,7 +766,7 @@ begin
       TA_TB <= "1011";
       TB_TB <= "1011";
       TD_TB <= "1011";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 12 (Temp Reg12)
   wait until Clock_TB'event and Clock_TB='1';
@@ -781,7 +781,7 @@ begin
       TA_TB <= "1100";
       TB_TB <= "1100";
       TD_TB <= "1100";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 13 (Temp Reg13)
   wait until Clock_TB'event and Clock_TB='1';
@@ -796,7 +796,7 @@ begin
       TA_TB <= "1101";
       TB_TB <= "1101";
       TD_TB <= "1101";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 14 (Temp Reg14)
   wait until Clock_TB'event and Clock_TB='1';
@@ -811,7 +811,7 @@ begin
       TA_TB <= "1110";
       TB_TB <= "1110";
       TD_TB <= "1110";
-  wait for PERIOD;
+  wait for period;
 
   --ID - 15 (Temp Reg15)
   wait until Clock_TB'event and Clock_TB='1';
@@ -826,7 +826,7 @@ begin
       TA_TB <= "1111";
       TB_TB <= "1111";
       TD_TB <= "1111";
-  wait for PERIOD;
+  wait for period;
 
   --PERFORMING FUNCTIONAL UNIT OPERATIONS--
 
@@ -834,7 +834,7 @@ begin
 --01011 SA (Last Dig ID + 5)
 --10101 SB (Last Dig ID + 15)
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01000"; --AND 
 
     MD_TB <= '0';
@@ -845,7 +845,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01010"; --OR 
 
     MD_TB <= '0';
@@ -856,7 +856,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00110"; --A - 1 
 
     MD_TB <= '0';
@@ -867,7 +867,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "10100"; --srB 
 
     MD_TB <= '0';
@@ -878,7 +878,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00101"; --A + 1s c B + 1 
 
     MD_TB <= '0';
@@ -889,7 +889,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01110"; --1s c A 
 
     MD_TB <= '0';
@@ -900,7 +900,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00100"; --A + 1s c B 
 
     MD_TB <= '0';
@@ -911,7 +911,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "10000"; --B 
 
     MD_TB <= '0';
@@ -922,7 +922,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00011"; --A + B + 1 
 
     MD_TB <= '0';
@@ -933,7 +933,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "11000"; --slB 
 
     MD_TB <= '0';
@@ -944,7 +944,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00010"; --A + B 
 
     MD_TB <= '0';
@@ -955,7 +955,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00111"; --A (00111) 
 
     MD_TB <= '0';
@@ -966,7 +966,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00000"; --A (00000) 
 
     MD_TB <= '0';
@@ -977,7 +977,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00001"; --A + 1 
 
     MD_TB <= '0';
@@ -988,7 +988,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01100"; --A XOR B  
 
     MD_TB <= '0';
@@ -999,13 +999,13 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
 
     --PERFORMING ONLY A AND B PORT FUNCTIONAL UNIT OPERATIONS USING IR AND MUX B--
     
     IR_IN_TB <= "00000001010001011111110101100010";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01000"; --AND
 
     MB_TB <= '1';
@@ -1016,7 +1016,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01010"; --OR 
 
     MB_TB <= '1';
@@ -1027,10 +1027,10 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    -- wait for PERIOD;
+    -- wait for period;
     -- FS_TB <= "00110"; --A - 1 
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "10100"; --srB 
 
     MB_TB <= '1';
@@ -1041,7 +1041,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00101"; --A + 1s c B + 1 
 
     MB_TB <= '1';
@@ -1052,10 +1052,10 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    -- wait for PERIOD;
+    -- wait for period;
     -- FS_TB <= "01110"; --1s c A 
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00100"; --A + 1s c B 
 
     MB_TB <= '1';
@@ -1066,7 +1066,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "10000"; --B 
 
     MB_TB <= '1';
@@ -1077,7 +1077,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00011"; --A + B + 1 
 
     MB_TB <= '1';
@@ -1088,7 +1088,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "11000"; --slB 
 
     MB_TB <= '1';
@@ -1099,7 +1099,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "00010"; --A + B 
 
     MB_TB <= '1';
@@ -1110,16 +1110,16 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    -- wait for PERIOD;
+    -- wait for period;
     -- FS_TB <= "00111"; --A (00111) 
 
-    -- wait for PERIOD;
+    -- wait for period;
     -- FS_TB <= "00000"; --A (00000) 
 
-    -- wait for PERIOD;
+    -- wait for period;
     -- FS_TB <= "00001"; --A + 1 
 
-    wait for PERIOD;
+    wait for period;
     FS_TB <= "01100"; --A XOR B  
 
     MB_TB <= '1';
@@ -1130,7 +1130,7 @@ begin
     TB_TB <= "0000";
     TD_TB <= "0000";
 
-    wait for PERIOD;
+    wait for period;
 
 
    end process;
