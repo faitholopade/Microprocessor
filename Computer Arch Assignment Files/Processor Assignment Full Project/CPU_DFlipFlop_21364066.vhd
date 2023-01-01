@@ -46,7 +46,7 @@ architecture Behavioral of CPU_DFlipFlop_21364066 is
     begin
         process(Clock)
         begin 
-           if rising_edge(Clock) then
+        if rising_edge(Clock) then
             if Reset = '1' then 
                 Q <= '0';
             elsif Enable = '1' then
