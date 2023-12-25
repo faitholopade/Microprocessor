@@ -1,26 +1,8 @@
-# awesome vhdl
+# VHDL_Microprocessor
 
-VHDL support for Visual Studio Code 
+A microprocessor I designed for Computer Architecture module
 
-https://github.com/puorc/awesome-vhdl
+Von Neumann Architecture. Implements a fetch,decode,execute pipelining
 
-## Demo
-
-![gif1](https://github.com/puorc/awesome-vhdl/raw/master/images/demo.gif)
-
-## Features
-- syntax highlighting.
-- code snippets.
-- code completion.
-- brace matching.
-- line and block commenting.
-- other features and better syntax analysis will be added soon.
-
-## Change log
-Please visit the repository for more information.
-
-## License
-This extension is licensed under the MIT License. Please see the
-third-party notices file for details on the third-party
-binaries that we include with releases of this project.
-
+The schematic of the processor:
+![image](https://github.com/faitholopade/VHDL_Microprocessor/assets/91458920/6c029cdc-6b18-4217-b5d3-65e7ee6f4754)
